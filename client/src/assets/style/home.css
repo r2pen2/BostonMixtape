@@ -34,7 +34,6 @@
 }
 
 .record {
-  --center-size: 200px;
   --record-size: 500px;
   --record-opacity: 0.8;
   
@@ -60,10 +59,10 @@ img.record-image {
 
 img.record-center {
   position: absolute;
-  width: var(--center-size);
-  height: var(--center-size);
-  top: calc(50% - var(--center-size) / 2);
-  left: calc(50% - var(--center-size) / 2);
+  width: var(--record-size);
+  height: var(--record-size);
+  top: calc(50% - var(--record-size) / 2);
+  left: calc(50% - var(--record-size) / 2);
 }
 
 img.record-glare {
