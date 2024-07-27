@@ -19,7 +19,7 @@
   align-items: center;
 
   background-image: url('../images/homepage/fullSplash.png');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
 }
@@ -36,18 +36,35 @@
 .record {
   --record-size: 500px;
   --record-opacity: 0.8;
+  --controls-opacity: 0;
   
-  position: relative;
   width: var(--record-size);
   height: var(--record-size);
+
+  transition: all 0.25s ease;
+  transform: scale(0.4);
 }
 
-.record.active *.spin  {
+.record.active {
+  pointer-events: all;
+  transform: scale(1);
+  --controls-opacity: 1;
+}
+
+.record *.spin  {
   animation: spin 5s linear infinite;
+  animation-play-state: paused;
+}
+
+.record-slide {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: var(--record-size);
 }
 
 img.record-image {
-  position: absolute;
   width: var(--record-size);
   height: var(--record-size);
   opacity: var(--record-opacity);
@@ -63,6 +80,42 @@ img.record-center {
   height: var(--record-size);
   top: calc(50% - var(--record-size) / 2);
   left: calc(50% - var(--record-size) / 2);
+}
+
+.record-controls {
+  --record-control-size: 2rem;
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  transition: all 0.25s ease;
+  opacity: var(--controls-opacity);
+}
+
+
+.record-title {
+  transition: all 0.25s ease;
+  transform: scale(3) translateY(0.75rem);
+  color: #68172A !important;
+  font-weight: bold !important;
+}
+
+.record.active *.record-title {
+  position: absolute;
+  bottom: 12%;
+  width: 100%;
+  font-size: 1.5rem;
+  transform: scale(1.5);
+}
+
+.record-control-button {
+  width: var(--record-control-size);
+  height: var(--record-control-size);
+  cursor: pointer;
+  color: #68172A;
+  border-radius: 50%;
 }
 
 img.record-glare {
@@ -90,6 +143,32 @@ img.record-glare {
   left: 0;
 }
   
-  .home-splash-container hgroup h1.header-line-2 {
+.home-splash-container hgroup h1.header-line-2 {
   margin-top: 6rem;
+}
+
+.record-tray {
+  min-height: calc(100vh - var(--navbar-height));
+  max-height: calc(100vh - var(--navbar-height));
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+
+
+@media (max-width: 768px) {
+  .record {
+    --record-size: 300px;
+  }
+
+  .record.active *.record-title {
+    font-size: 1.25rem;
+    transform: scale(1.25);
+    bottom: 10%;
+  }
+
+  .record-controls {
+    bottom: 20%;
+  }
 }

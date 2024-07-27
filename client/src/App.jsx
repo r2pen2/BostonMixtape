@@ -14,6 +14,7 @@ import { AuthenticationManager, WLPermissionsConfig } from './libraries/Web-Lego
 import { AnalyticsManager } from './libraries/Web-Legos/api/analytics.ts'
 import { WLThemeProvider, createWLTheme } from './libraries/Web-Legos/Layouts/WLThemes';
 import Home from './routes/Home.jsx';
+import '@mantine/core/styles.css';
 
 /** Context to keep track of current user */
 export const CurrentSignInContext = createContext();

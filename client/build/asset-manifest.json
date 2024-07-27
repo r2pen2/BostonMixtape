@@ -1,14 +1,37 @@
 {
   "files": {
-    "main.css": "/static/css/main.0fb4700f.css",
-    "main.js": "/static/js/main.24e4aef4.js",
+    "main.css": "/static/css/main.c8d87d85.css",
+    "main.js": "/static/js/main.d5003311.js",
+    "static/media/fullSplash.png": "/static/media/fullSplash.054f9f6a97d6c42a284a.png",
+    "static/media/summerOf69.mp3": "/static/media/summerOf69.bba76299481f545e7836.mp3",
+    "static/media/recordPurple.png": "/static/media/recordPurple.f46e11dfcec40d4eb433.png",
+    "static/media/recordHotPink.png": "/static/media/recordHotPink.f96d9cfdec44bed5da72.png",
+    "static/media/recordGold.png": "/static/media/recordGold.c049a9332c1855cba327.png",
+    "static/media/september.mp3": "/static/media/september.e279ff1a535365771540.mp3",
+    "static/media/recordIceGreen.png": "/static/media/recordIceGreen.39c6a9154a0371cb9920.png",
+    "static/media/recordIceBlue.png": "/static/media/recordIceBlue.0d5047b036f46cfc8b47.png",
+    "static/media/recordRed.png": "/static/media/recordRed.1264e6ee2c2badb9c142.png",
+    "static/media/sweetCaroline.mp3": "/static/media/sweetCaroline.c1b103a9333f84ffa7b9.mp3",
+    "static/media/recordLava.png": "/static/media/recordLava.564bc590f30b100042fb.png",
+    "static/media/recordGreen.png": "/static/media/recordGreen.d9c01f70cb7bfc04ca4e.png",
+    "static/media/recordSteel.png": "/static/media/recordSteel.b3a38505dbdd1b709a1e.png",
+    "static/media/myGirl.mp3": "/static/media/myGirl.6ca921dc9b1cda29b775.mp3",
+    "static/media/haveIToldYouLately.mp3": "/static/media/haveIToldYouLately.6ff02a78147994e141e5.mp3",
+    "static/media/mustangSally.mp3": "/static/media/mustangSally.8126408de0d4de326cf9.mp3",
+    "static/media/driftAway.mp3": "/static/media/driftAway.b64e09fa4ddbef046c75.mp3",
+    "static/media/brownEyedGirl.mp3": "/static/media/brownEyedGirl.68f634a4dca203946293.mp3",
+    "static/media/layDownSally.mp3": "/static/media/layDownSally.428377e670cd2befbd3c.mp3",
+    "static/media/recordGray.png": "/static/media/recordGray.30c4480e441eabb2adce.png",
+    "static/media/allRightNow.mp3": "/static/media/allRightNow.e0652beee484469c08cd.mp3",
     "static/media/power-brick.gif": "/static/media/power-brick.e4a20717c79c08149a40.gif",
+    "static/media/glare.png": "/static/media/glare.07f7f8a19d94d5a55c8e.png",
+    "static/media/recordCenter.png": "/static/media/recordCenter.60fcaa18770874b7e6e1.png",
     "index.html": "/index.html",
-    "main.0fb4700f.css.map": "/static/css/main.0fb4700f.css.map",
-    "main.24e4aef4.js.map": "/static/js/main.24e4aef4.js.map"
+    "main.c8d87d85.css.map": "/static/css/main.c8d87d85.css.map",
+    "main.d5003311.js.map": "/static/js/main.d5003311.js.map"
   },
   "entrypoints": [
-    "static/css/main.0fb4700f.css",
-    "static/js/main.24e4aef4.js"
+    "static/css/main.c8d87d85.css",
+    "static/js/main.d5003311.js"
   ]
 }
