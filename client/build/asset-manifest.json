@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.c8d87d85.css",
+    "main.css": "/static/css/main.8c169171.css",
     "main.js": "/static/js/main.d5003311.js",
     "static/media/fullSplash.png": "/static/media/fullSplash.054f9f6a97d6c42a284a.png",
     "static/media/summerOf69.mp3": "/static/media/summerOf69.bba76299481f545e7836.mp3",
@@ -27,11 +27,11 @@
     "static/media/glare.png": "/static/media/glare.07f7f8a19d94d5a55c8e.png",
     "static/media/recordCenter.png": "/static/media/recordCenter.60fcaa18770874b7e6e1.png",
     "index.html": "/index.html",
-    "main.c8d87d85.css.map": "/static/css/main.c8d87d85.css.map",
+    "main.8c169171.css.map": "/static/css/main.8c169171.css.map",
     "main.d5003311.js.map": "/static/js/main.d5003311.js.map"
   },
   "entrypoints": [
-    "static/css/main.c8d87d85.css",
+    "static/css/main.8c169171.css",
     "static/js/main.d5003311.js"
   ]
 }
