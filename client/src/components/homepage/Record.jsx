@@ -29,6 +29,7 @@ import haveIToldYouLately from "../../assets/audio/haveIToldYouLately.mp3"
 import MustangSally from "../../assets/audio/mustangSally.mp3"
 import AllRightNow from "../../assets/audio/allRightNow.mp3"
 import { Text } from "@mantine/core"
+import { WLTextV2 } from "../../libraries/Web-Legos/components/Text"
 
 export const RecordColor = {
   Gold: "gold",
@@ -171,6 +172,10 @@ export const RecordTray = () => {
           </Carousel.Slide>
         ))}
       </Carousel>
+      <div className="d-flex flex-column align-items-center justify-content-center w-100">
+        <WLTextV2 headerLevel={2} className="poetsen-one-regular h2-container">Offering the most comprehensive repertoire of music by the finest talent;</WLTextV2>
+        <WLTextV2 headerLevel={2} className="poetsen-one-regular h2-container">our reputation for consistently exceeding our client's high expectations has earned us a reputation as Boston's best option for tasteful and exciting musical entertainment.</WLTextV2>
+      </div>
     </div>
   )
 
@@ -259,7 +264,7 @@ export const Record = ({track, embla, activeRecord, mousePosition, setMousePosit
         {playing[track.number] && <IconPlayerPauseFilled onClick={handlePause} className="record-control-button" />}
         <IconPlayerTrackNextFilled onClick={handleNext} className="record-control-button" />
       </div>
-      <Text className="record-title">{track.title}</Text>
+      <Text className="record-title poetsen-one-regular">{track.title}</Text>
     </div>
   )
 }

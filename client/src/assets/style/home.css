@@ -130,21 +130,27 @@ img.record-glare {
 
 .home-splash-container hgroup {
   pointer-events: none;
+  position: absolute;
+  top: 5%;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #6A2537 !important;
 }
 
 .home-splash-container hgroup h1 {
-  position: absolute;
-  width: 100%;
-  z-index: 2;
   font-size: 6rem;
-  color: #6A2537;
-  text-align: center;
-  top: 13%;
-  left: 0;
+  margin-bottom: -1.75rem;
 }
-  
-.home-splash-container hgroup h1.header-line-2 {
-  margin-top: 6rem;
+
+.home-splash-container hgroup h2 {
+  color: #6A2537 !important;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
 }
 
 .record-tray {
@@ -153,8 +159,20 @@ img.record-glare {
   align-items: center;
   justify-content: center;
   display: flex;
+  flex-direction: column;
 }
 
+.record-tray .h2-container {
+  align-self: center;
+  font-size: 2rem;
+  margin-top: 1rem;
+  max-width: 1000px;
+}
+
+.record-tray h2 {
+  color: #FCB393 !important;
+  font-size: 1.5rem !important;
+}
 
 
 @media (max-width: 768px) {
@@ -176,4 +194,51 @@ img.record-glare {
   .record-controls {
     bottom: 20%;
   }
+}
+
+section.purple-content {
+  background-color: #702137;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  width: 100%;
+}
+
+section.purple-content * {
+  color: #FCB393;
+}
+
+section.purple-content * h2  {
+  font-size: 3rem !important;
+}
+
+section.purple-content * p  {
+  font-size: 1.25rem !important;
+  max-width: 1000px;
+  align-self: center;
+}
+
+.contact-button {
+  color: #702137 !important;
+  width: 20rem;
+}
+
+.contact-line {
+  height: 2px;
+  width: 100%;
+  background-color: #FCB393;
+}
+
+.contact-button-container {
+  width: 30rem;
+}
+
+.contact-button-container:hover .contact-line {
+  width: 0px;
+}
+
+.contact-button-container * {
+  transition: all 0.25s ease;
 }
