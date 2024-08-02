@@ -211,13 +211,21 @@ section.purple-content * {
 }
 
 section.purple-content * h2  {
-  font-size: 3rem !important;
+  font-size: 2.5rem !important;
 }
 
-section.purple-content * p  {
+section.purple-content * p:not(.performer-text)  {
   font-size: 1.25rem !important;
   max-width: 1000px;
   align-self: center;
+}
+
+section.purple-content * p:not(.performer-text).wider  {
+  max-width: 1400px;
+}
+
+section.purple-content * p:not(.performer-text).lighter  {
+  color: #fdc0a6 !important;
 }
 
 .contact-button {
@@ -241,4 +249,8 @@ section.purple-content * p  {
 
 .contact-button-container * {
   transition: all 0.25s ease;
+}
+
+.performer-text {
+  user-select: none;
 }
