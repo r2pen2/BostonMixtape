@@ -45,3 +45,45 @@ export class ExampleModel extends SiteModel implements FirestoreSerializable {
     return e;
   }
 }
+
+export class Performer extends SiteModel {
+
+  /** A SiteModel for basic testimonais— includes an author, message, and order. */
+  constructor() { super("performers", "Performers") }
+  
+  booleans = {
+  }
+  images = {}
+  numbers = {
+    order: null,
+  }
+  shortStrings = {
+    name: "",
+    imageHref: "",
+  }
+  longStrings = {
+    bio: "",
+  }
+
+  fillConstantExampleData() {
+    this.longStrings.bio = "Our founder, lead vocalist and band leader, Behzad Dayanim, brings nearly two decades of national and international performance experience along with several album credits. A graduate of Manhattan School of Music, Behzad represents the best in New York talent, conveniently based in Boston. His proficiency in numerous styles of Jewish and American music is extraordinary and his dedication and commitment to providing unparalleled personalized service defines our philosophy and consistently leaves clients and their guests smiling. Learn more about the orchestra and how it came to be by clicking here.";
+    this.shortStrings.name = "Behzad Dayanim";
+    this.shortStrings.imageHref = "http://www.berachorchestra.com/Behzadheadnew.jpg";
+    return this;
+  }
+
+  static examples = {
+    default: (new Performer()).fillConstantExampleData().toFirestore(),
+    alternate: (new Performer()).fillConstantExampleData().toFirestore(),
+  }
+
+  fromFirestore(data: any) : Performer {
+    const p = new Performer();
+    p.id = data.id;
+    p.shortStrings.name = data.name;
+    p.longStrings.bio = data.bio;
+    p.numbers.order = data.order;
+    p.shortStrings.imageHref = data.imageHref;
+    return p;
+  }
+}

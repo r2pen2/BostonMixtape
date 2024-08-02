@@ -6,7 +6,7 @@ import { Record, RecordColor, RecordTray } from '../components/homepage/Record'
 import {WLHeader, WLHeaderV2, WLTextV2} from "../libraries/Web-Legos/components/Text"
 import { Button, Paper, Text } from '@mantine/core'
 import { Contact } from '../components/homepage/Contact'
-import { Performer, SiteModel } from '../libraries/Web-Legos/api/models.ts'
+import { Performer, SiteModel } from '../api/siteModels.ts'
 import { Carousel } from '@mantine/carousel'
 
 import {TypeAnimation} from "react-type-animation"
