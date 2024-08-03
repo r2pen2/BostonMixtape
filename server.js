@@ -50,7 +50,7 @@ app.use("/site-models", siteModels);
 // Server site rules
 app.use("/site-rules", siteRules);
 // Server site mail
-app.use("/site-mail", siteMail);
+// app.use("/site-mail", siteMail);
 
 // Server site authentication
 const siteAuthenticationManager = new SiteAuthenticationManager(process.env.KEY, serverKey);
