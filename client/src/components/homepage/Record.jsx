@@ -172,7 +172,7 @@ export const RecordTray = () => {
           </Carousel.Slide>
         ))}
       </Carousel>
-      <div className="d-flex flex-column align-items-center justify-content-center w-100">
+      <div className="d-flex flex-column align-items-center justify-content-center w-100 px-2 px-sm-3">
         <WLTextV2 headerLevel={2} className="poetsen-one-regular h2-container">Offering the most comprehensive repertoire of music by the finest talent;</WLTextV2>
         <WLTextV2 headerLevel={2} className="poetsen-one-regular h2-container">our reputation for consistently exceeding our client's high expectations has earned us a reputation as Boston's best option for tasteful and exciting musical entertainment.</WLTextV2>
       </div>

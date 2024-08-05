@@ -205,6 +205,22 @@ section.purple-content {
   padding-top: 2rem;
   width: 100%;
 }
+section.red-content {
+  background-color: #C9394F;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+section.light-purple-content {
+  background-color: #9C2C45;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
 section.purple-content * {
   color: #FCB393;
@@ -226,6 +242,49 @@ section.purple-content * p:not(.performer-text).wider  {
 
 section.purple-content * p:not(.performer-text).lighter  {
   color: #fdc0a6 !important;
+}
+
+section.red-content * {
+  color: #faebee;
+}
+
+section.red-content * h2  {
+  font-size: 2.5rem !important;
+}
+
+section.red-content * p:not(.performer-text)  {
+  font-size: 1.25rem !important;
+  max-width: 1000px;
+  align-self: center;
+}
+
+section.red-content * p:not(.performer-text).wider  {
+  max-width: 1400px;
+}
+
+section.red-content * p:not(.performer-text).lighter  {
+  color: #faebee !important;
+}
+section.light-purple-content * {
+  color: #faebee;
+}
+
+section.light-purple-content * h2  {
+  font-size: 2.5rem !important;
+}
+
+section.light-purple-content * p:not(.performer-text)  {
+  font-size: 1.25rem !important;
+  max-width: 1000px;
+  align-self: center;
+}
+
+section.light-purple-content * p:not(.performer-text).wider  {
+  max-width: 1400px;
+}
+
+section.light-purple-content * p:not(.performer-text).lighter  {
+  color: #faebee !important;
 }
 
 .contact-button {
@@ -253,4 +312,8 @@ section.purple-content * p:not(.performer-text).lighter  {
 
 .performer-text {
   user-select: none;
+}
+
+.flip-svg {
+  transform: rotate(180deg);
 }

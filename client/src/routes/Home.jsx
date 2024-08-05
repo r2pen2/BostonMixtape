@@ -47,7 +47,7 @@ export default function Home() {
         </hgroup>
         <RecordTray />
       </section>
-      <section className="purple-content px-2 px-lg-0 py-5">
+      <section className="purple-content px-2 px-sm-3 py-5">
         <WLHeaderV2 h2 className="poetsen-one-regular">The Best of Both Worlds</WLHeaderV2>
         <WLTextV2 className="">Specializing in events requiring a blend of styles and genres, the BERACH Orchestra defines itself through our uniquely customized approach, dynamic repertoire, exceptional versatility and uncompromising quality. We are particularly adept at integrating authentic traditional and contemporary Jewish music with a full range of American popular music. Our repertoire spans virtually every era and we are constantly adding songs to our repertoire so new requests are welcome.</WLTextV2>
         <div className="d-flex flex-row align-items-center justify-content-center pt-4 gap-2 contact-button-container">
@@ -58,7 +58,7 @@ export default function Home() {
           <div className="contact-line"></div>
         </div>
       </section>
-      <section className="purple-content px-2 px-lg-0 py-5 d-flex flex-column align-items-center justify-content-center">
+      <section className="purple-content px-2 px-sm-3 py-5 d-flex flex-column align-items-center justify-content-center">
         <WLHeaderV2 h2 className="poetsen-one-regular">Some of our Featured Performers</WLHeaderV2>
         <WLTextV2 className="wider lighter mb-2">
           Members of the BERACH Orchestra have been selected among hundreds of local talent and many have national and international performance experience, numerous recording credits and extensive experience performing an incredibly diverse range of music. Some serve as faculty at leading conservatories and all are proud to associate with our orchestra and its newly established educational affiliate.
@@ -75,10 +75,11 @@ export default function Home() {
           Ensembles are configured to meet your specific needs based on a number of variables. Our objective is to carefully listen to what it is you are planning, offer some possible approaches to achieve your ideal result, and then carefully prepare and configure our services accordingly. The planning is only part of the process. Another differentiating factor about our services is that the person with whom you are discussing your plans is very likely going to be at your event implementing these very same plans so the chance for confusion and mistakes are minimized. Your enthusiastic satisfaction and trust are our utmost concern and our ultimate goal. We are immensely grateful to our clients for the opportunity to share in their wonderful celebrations.
         </WLTextV2>
       </section>
-      <section className="purple-content">
-        <div className="container-fluid px-2 px-lg-5">
+      <section className="red-content">
+        <Peaks />
+        <div className="container-fluid px-2 px-sm-3">
           <div className="row">
-            <div className="col-12 col-lg-6">
+            <div className="col-12 col-lg-6 mb-4">
               <TypeAnimation
                 sequence={[
                   'We Play Contemporary Jewish Music', 1000,
@@ -102,9 +103,9 @@ export default function Home() {
                 The BERACH Orchestra customizes each performance to our client's specific needs and is proud to offer a comprehensive range of music including songs spanning the globe. Requests are welcome! Our goal is to provide the perfect combination of music to underscore the event at hand. Our exceptional team enjoys the challenge of learning something new and we always come prepared for last minute changes and welcome unusual and original requests, even in foreign languages (advance notice is generally recommended). We suggest that any very important requests (eg. First Dance, Parent-Child Dance or Last Dance) be communicated at least three weeks in advance to ensure adequate time to develop an appropriate arrangement.
               </WLTextV2>
             </div>
-            <div className="col-12 col-lg-6">
+            <div className="col-12 col-lg-6 py-lg-0 py-5">
               <WLHeaderV2 h2 className="poetsen-one-regular">Services</WLHeaderV2>
-              <div className="container">
+              <div className="container-fluid">
                 <div className="row">
                   <Service title="Event Planning" icon={<IconCalendar size={32} />}>
                     We have a wealth of experience planning and facilitating all sorts of events and would be happy to assist you with yours.
@@ -123,6 +124,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <Peaks flip />
       </section>
       <Contact />
     </div>
@@ -146,3 +148,15 @@ const Service = (props) => {
   </div>
   )
 }
+
+
+
+const Peaks = ({flip}) => (
+  <svg className={flip ? "flip-svg" : ""} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" id="visual" version="1.1" viewBox={`0 ${flip ? "90" : "0"} 900 242`}>
+    <path d="M0 231L129 242L257 167L386 199L514 231L643 190L771 240L900 182L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#c9394f"/>
+    <path d="M0 199L129 158L257 196L386 128L514 186L643 177L771 199L900 126L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#b2324a"/>
+    <path d="M0 103L129 149L257 106L386 113L514 91L643 133L771 158L900 158L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#9c2c45"/>
+    {!flip && <path d="M0 63L129 75L257 91L386 82L514 112L643 80L771 102L900 65L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#86263e"/>}
+    {!flip && <path d="M0 56L129 35L257 30L386 64L514 71L643 38L771 41L900 58L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#702137"/>}
+  </svg>
+)
