@@ -162,7 +162,7 @@ img.record-glare {
   flex-direction: column;
 }
 
-.record-tray .h2-container {
+.h2-container {
   align-self: center;
   font-size: 2rem;
   margin-top: 1rem;
