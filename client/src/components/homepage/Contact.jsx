@@ -116,7 +116,6 @@ export const Contact = () => {
     <section id="contact" className="d-flex flex-column align-items-center justify-content-center w-100" style={{backgroundColor: "#FCB393", position: "relative"}}>
       <Spacer y={2} />
       <div style={{maxWidth: 1000}} className='mt-3 gap-2 px-2 px-md-3 w-100 d-flex flex-column align-items-center'>
-        <WLTextV2 size={24} editable={userCanEditText} firestoreId="contact-quote" />
         <Spacer y={0.5} />
         <form style={{backgroundColor: "white", }} className='shadow w-100 p-2 p-md-3 d-flex flex-column align-items-center gap-2'>
           <FormContent />
