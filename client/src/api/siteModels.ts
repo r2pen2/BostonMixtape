@@ -61,7 +61,6 @@ export class Performer extends SiteModel {
   }
   shortStrings = {
     name: "",
-    imageHref: "",
   }
   longStrings = {
     bio: "",
