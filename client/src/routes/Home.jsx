@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import "../assets/style/home.css"
 import { Record, RecordColor, RecordTray } from '../components/homepage/Record'
@@ -11,10 +11,21 @@ import { Carousel } from '@mantine/carousel'
 
 import {TypeAnimation} from "react-type-animation"
 import { IconBrain, IconCalendar, IconExchange, IconMicrophone, IconMicrophone2 } from '@tabler/icons-react'
+import { CurrentSignInContext } from '../App.jsx'
+import { AuthenticationManager } from '../libraries/Web-Legos/api/auth.ts'
 
-const userCanEditText = true;
 
 export default function Home() {
+
+  
+  const [userCanEditText, setUserCanEditText] = useState(false);
+
+  const {currentSignIn} = useContext(CurrentSignInContext);
+  const {authenticationManager} = useContext(AuthenticationManager.Context)
+
+  useEffect(() => {
+    authenticationManager.getPermission(currentSignIn, "siteText").then(p => setUserCanEditText(p));
+  }, [currentSignIn, authenticationManager]);
 
   // const [performers, setPerformers] = useState([new SiteModel()])
   const [performers, setPerformers] = useState([Performer.examples.alternate, Performer.examples.alternate, Performer.examples.alternate, Performer.examples.alternate, Performer.examples.alternate])
