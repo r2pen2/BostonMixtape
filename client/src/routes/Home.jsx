@@ -134,7 +134,7 @@ export default function Home() {
           <h1 className="anton-regular header-line-1">BERACH</h1>
           <h1 className="anton-regular header-line-2">Orchestra</h1>
           <WLHeaderV2 h2 className="poetsen-one-regular">Your happiness... set to music.</WLHeaderV2>
-          <WLHeaderV2 h2 className="poetsen-one-regular">—Newton, MA—</WLHeaderV2>
+          {/* <WLHeaderV2 h2 className="poetsen-one-regular">—Newton, MA—</WLHeaderV2> */}
         </hgroup>
         <RecordTray userCanEditText={userCanEditText} />
       </section>
