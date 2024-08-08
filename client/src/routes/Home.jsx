@@ -6,13 +6,16 @@ import { Record, RecordColor, RecordTray } from '../components/homepage/Record'
 import {WLHeader, WLHeaderV2, WLText, WLTextV2} from "../libraries/Web-Legos/components/Text"
 import { Button, Paper, Text } from '@mantine/core'
 import { Contact } from '../components/homepage/Contact'
-import { Performer, SiteModel } from '../api/siteModels.ts'
+import { Performer } from '../api/siteModels.ts'
 import { Carousel } from '@mantine/carousel'
+import { SiteModel } from '../libraries/Web-Legos/api/models.ts';
 
 import {TypeAnimation} from "react-type-animation"
 import { IconBrain, IconCalendar, IconExchange, IconMicrophone, IconMicrophone2 } from '@tabler/icons-react'
 import { CurrentSignInContext } from '../App.jsx'
 import { AuthenticationManager } from '../libraries/Web-Legos/api/auth.ts'
+
+import {AddModelButton, ModelEditButton, ModelEditModal} from "../libraries/Web-Legos/components/Modals.jsx"
 
 
 export default function Home() {
@@ -23,12 +26,15 @@ export default function Home() {
   const {currentSignIn} = useContext(CurrentSignInContext);
   const {authenticationManager} = useContext(AuthenticationManager.Context)
 
+  const [currentModel, setCurrentModel] = useState(new SiteModel());
+  const [editModalOpen, setEditModalOpen] = useState(false);
+
   useEffect(() => {
     authenticationManager.getPermission(currentSignIn, "siteText").then(p => setUserCanEditText(p));
+    Performer.getAndSet(setPerformers);
   }, [currentSignIn, authenticationManager]);
 
-  // const [performers, setPerformers] = useState([new SiteModel()])
-  const [performers, setPerformers] = useState([Performer.examples.alternate, Performer.examples.alternate, Performer.examples.alternate, Performer.examples.alternate, Performer.examples.alternate])
+  const [performers, setPerformers] = useState([])
 
   const Ensemble = () => {
 
@@ -41,6 +47,7 @@ export default function Home() {
               <Text className="poetsen-one-regular performer-text py-2" size="1.5rem" c="#6A2537">{performer.name}</Text>
               <Text className="poetsen-one-regular performer-text pb-2" c="#6A2537">{performer.bio}</Text>
             </div>
+            <ModelEditButton userCanEdit={userCanEditText} data={performer} model={Performer} setEditModalOpen={setEditModalOpen} setCurrentModel={setCurrentModel} />
           </Paper>
         </Carousel.Slide>
       )
@@ -58,6 +65,7 @@ export default function Home() {
         >
           {performers.map((performer, index) => <PerformerSlide key={index} performer={performer} />)}
         </Carousel>
+        <AddModelButton userCanEdit={userCanEditText} model={Performer} setCurrentModel={setCurrentModel} setEditModalOpen={setEditModalOpen} />
         <WLTextV2 className="wider mt-2 lighter" firestoreId="ensemble-body-2" editable={userCanEditText}/>
       </section>
     )
@@ -120,6 +128,7 @@ export default function Home() {
   
   return (
     <div className="homepage-container">
+      <ModelEditModal open={editModalOpen} setOpen={setEditModalOpen} model={currentModel} />
       <section className="home-splash-container">
         <hgroup>
           <h1 className="anton-regular header-line-1">BERACH</h1>
