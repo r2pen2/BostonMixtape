@@ -8,10 +8,13 @@ const SiteTextManager = require('./libraries/Server-Legos/siteTextV2');
 const siteModels = require('./libraries/Server-Legos/siteModels');
 const siteRules = require('./libraries/Server-Legos/siteRules');
 const SiteAuthenticationManager = require('./libraries/Server-Legos/siteAuthV2');
+const SiteFormManager = require('./libraries/Server-Legos/siteForms');
 const fileUpload = require('express-fileupload');
 
+const SiteMailManager = require('./libraries/Server-Legos/siteMail.js');
+
 /** Key for this server in DB */
-const serverKey = "BP-10700";
+const serverKey = "BBM";
 
 // Init express application
 const app = express();
@@ -50,10 +53,17 @@ app.use("/site-models", siteModels);
 // Server site rules
 app.use("/site-rules", siteRules);
 // Server site mail
-// app.use("/site-mail", siteMail);
+const siteMailManager = new SiteMailManager("joedobbelaar@gmail.com", process.env.BBMEMAILPASSWORD);
+const siteMailRouter = siteMailManager.getRouter();
+app.use("/site-mail", siteMailRouter);
+
+
+const siteFormManager = new SiteFormManager(process.env.BBMFORMKEY);
+const siteFormRouter = siteFormManager.getRouter();
+app.use("/site-forms", siteFormRouter);
 
 // Server site authentication
-const siteAuthenticationManager = new SiteAuthenticationManager(process.env.KEY, serverKey);
+const siteAuthenticationManager = new SiteAuthenticationManager(process.env.BBMUSERKEY, serverKey);
 const siteAuthenticationRouter = siteAuthenticationManager.getRouter();
 app.use("/site-auth", siteAuthenticationRouter);
 

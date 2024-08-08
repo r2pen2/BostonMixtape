@@ -1,7 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.e2f9420f.css",
-    "main.js": "/static/js/main.d97da653.js",
+    "main.css": "/static/css/main.71417344.css",
+<<<<<<< HEAD
+    "main.js": "/static/js/main.7143e136.js",
+=======
+    "main.js": "/static/js/main.c4a79996.js",
+>>>>>>> a0060eb15c06cba9e8e84c38baa0186cc6ca7b68
     "static/media/fullSplash.png": "/static/media/fullSplash.054f9f6a97d6c42a284a.png",
     "static/media/summerOf69.mp3": "/static/media/summerOf69.bba76299481f545e7836.mp3",
     "static/media/recordPurple.png": "/static/media/recordPurple.f46e11dfcec40d4eb433.png",
@@ -28,11 +32,19 @@
     "static/media/recordCenter.png": "/static/media/recordCenter.60fcaa18770874b7e6e1.png",
     "static/media/hexagons.svg": "/static/media/hexagons.6a7d35e57ab9acd2a95f.svg",
     "index.html": "/index.html",
-    "main.e2f9420f.css.map": "/static/css/main.e2f9420f.css.map",
-    "main.d97da653.js.map": "/static/js/main.d97da653.js.map"
+    "main.71417344.css.map": "/static/css/main.71417344.css.map",
+<<<<<<< HEAD
+    "main.7143e136.js.map": "/static/js/main.7143e136.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2f9420f.css",
-    "static/js/main.d97da653.js"
+    "static/css/main.71417344.css",
+    "static/js/main.7143e136.js"
+=======
+    "main.c4a79996.js.map": "/static/js/main.c4a79996.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.71417344.css",
+    "static/js/main.c4a79996.js"
+>>>>>>> a0060eb15c06cba9e8e84c38baa0186cc6ca7b68
   ]
 }

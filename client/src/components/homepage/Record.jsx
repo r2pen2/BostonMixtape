@@ -107,7 +107,7 @@ const tracks = [
   }
 ]
 
-export const RecordTray = () => {
+export const RecordTray = ({userCanEditText}) => {
 
   const [audios, setAudios] = useState({});
 
@@ -173,8 +173,8 @@ export const RecordTray = () => {
         ))}
       </Carousel>
       <div className="d-flex flex-column align-items-center justify-content-center w-100 px-2 px-sm-3">
-        <WLTextV2 headerLevel={2} className="poetsen-one-regular h2-container">Offering the most comprehensive repertoire of music by the finest talent;</WLTextV2>
-        <WLTextV2 headerLevel={2} className="poetsen-one-regular h2-container">our reputation for consistently exceeding our client's high expectations has earned us a reputation as Boston's best option for tasteful and exciting musical entertainment.</WLTextV2>
+        <WLTextV2 headerLevel={2} firestoreId="hero-text-1" editable={userCanEditText} className="poetsen-one-regular h2-container" />
+        <WLTextV2 headerLevel={2} firestoreId="hero-text-2" editable={userCanEditText} className="poetsen-one-regular h2-container" />
       </div>
     </div>
   )
