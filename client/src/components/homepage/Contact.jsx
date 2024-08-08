@@ -1,5 +1,5 @@
 import MarkEmailReadOutlinedIcon from '@mui/icons-material/MarkEmailReadOutlined';
-import {WLTextV2} from "../../libraries/Web-Legos/components/Text";
+import {WLText, WLTextV2} from "../../libraries/Web-Legos/components/Text";
 import { AuthenticationManager } from '../../libraries/Web-Legos/api/auth.ts';
 import { useContext, useEffect, useState } from 'react';
 import { BBOMailManager, CurrentSignInContext } from '../../App';
@@ -16,14 +16,12 @@ export const Contact = () => {
   const [recaptchaModalOpen, setRecaptchaModalOpen] = useState(false);
 
   const [userCanEditText, setUserCanEditText] = useState(false);
-  const [userCanEditImages, setUserCanEditImages] = useState(false);
 
   const {currentSignIn} = useContext(CurrentSignInContext);
   const {authenticationManager} = useContext(AuthenticationManager.Context)
 
   useEffect(() => {
     authenticationManager.getPermission(currentSignIn, "siteText").then(p => setUserCanEditText(p));
-    authenticationManager.getPermission(currentSignIn, "siteImages").then(p => setUserCanEditImages(p));
   }, [currentSignIn, authenticationManager]);
 
   const ThankYou = () => (
@@ -38,6 +36,7 @@ export const Contact = () => {
       return <ThankYou />
     }
     return [
+      <WLTextV2 editable={userCanEditText} firestoreId="contact-header" key="contact-header" />,
       <Input key="name-input" id="name" placeholder="Your Name" size='lg' aria-label='Your Name' className='kiwi w-100' />,
       <Input key="email-input" id="email" placeholder="Your Email" size='lg' aria-label='Your Email' className='kiwi w-100' leftSection={<IconAt size={16} />} />,
       <Textarea key="message-input" id="message" placeholder="Your Message" size='lg' aria-label='Message' className='kiwi w-100' />,

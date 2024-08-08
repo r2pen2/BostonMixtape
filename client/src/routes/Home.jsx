@@ -123,7 +123,7 @@ export default function Home() {
         <WLTextV2 firestoreId="call-to-action-body" editable={userCanEditText} />
         <div className="d-flex flex-row align-items-center justify-content-center pt-4 gap-2 contact-button-container">
           <div className="contact-line"></div>
-          <Button color={"#FCB393"}>
+          <Button color={"#FCB393"} onClick={() => window.location = "/#contact"}>
             <Text className="contact-button poetsen-one-regular">Contact Us</Text>
           </Button>
           <div className="contact-line"></div>

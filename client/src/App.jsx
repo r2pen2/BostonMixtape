@@ -5,7 +5,7 @@ import "./libraries/Web-Legos/Layouts/wl.css";
 // Component Imports
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import powerBrick from "./assets/images/power-brick.gif";
-import { Text } from '@nextui-org/react';
+import { Link, Spacer, Text } from '@nextui-org/react';
 import { createContext, useState } from 'react';
 
 // API Imports
@@ -16,6 +16,11 @@ import { WLThemeProvider, createWLTheme } from './libraries/Web-Legos/Layouts/WL
 import Home from './routes/Home.jsx';
 import '@mantine/core/styles.css';
 import {MailManager} from "./libraries/Web-Legos/api/mail.ts"
+import { WLTextV2 } from './libraries/Web-Legos/components/Text.jsx';
+
+
+import { WLFooterSocials } from './libraries/Web-Legos/components/Footer.jsx';
+import  {FooterAuthButton} from "./libraries/Web-Legos/components/Auth.jsx"
 
 /** Context to keep track of current user */
 export const CurrentSignInContext = createContext();
@@ -85,6 +90,38 @@ export function App(props) {
               </Routes>
             {/** Place Footer Here */}
           </div>
+          
+          <footer className="pt-5 flex-column align-items-center justify-content-center">
+                <div className="d-flex flex-column align-items-center justify-content-center">
+                  {/* <WLHeaderV2 size="$4xl" align="center">A New Day Coaching</WLHeaderV2>           */}
+                  {/* <img src={logoTransparent} alt="A New Day Coaching" style={{width: "400px"}} /> */}
+                <WLFooterSocials lineBottom>
+                  <WLFooterSocials.Button color="#647659" size="42" platformKey="facebook" href="https://www.facebook.com/berachorchestra/" />
+                </WLFooterSocials>
+                <Spacer y={1} />
+                  <WLTextV2 firestoreId="contact-name" />
+                  <Link href="mailto:bbm@gmail.com">
+                    <Text css={{textDecoration:"underline"}}>bbm@gmail.com</Text>
+                  </Link>
+                  {/* <Link href="callto:2027982343">
+                    <Text css={{textDecoration:"underline"}}>(202) 798-ADHD</Text>
+                  </Link> */}
+                </div>
+                <div className="d-lg-flex w-100 d-none flex-row gap-2 align-items-end justify-content-around">
+                  <Link href="https://www.joed.dev">
+                    <Text css={{textDecoration:"underline"}}>Web Designer: Joe Dobbelaar</Text>
+                  </Link>
+                  <FooterAuthButton link authManager={authenticationManager} currentSignIn={currentSignIn} setCurrentSignIn={setCurrentSignIn}/>
+                </div>
+                <div className="d-flex d-lg-none flex-row gap-2 align-items-center justify-content-center">
+                  <Link href="https://www.joed.dev">
+                    <Text css={{textDecoration:"underline"}}>Web Designer: Joe Dobbelaar</Text>
+                  </Link>
+                </div>
+                <div className="d-flex d-lg-none flex-row gap-2 align-items-center justify-content-center">
+                  <FooterAuthButton link authManager={authenticationManager} currentSignIn={currentSignIn} setCurrentSignIn={setCurrentSignIn}/>
+                </div>
+              </footer>
         </Router>
       </AppContextProvider>
       </WLThemeProvider>
