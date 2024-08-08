@@ -49,11 +49,13 @@ export class ExampleModel extends SiteModel implements FirestoreSerializable {
 export class Performer extends SiteModel {
 
   /** A SiteModel for basic testimonais— includes an author, message, and order. */
-  constructor() { super("performers", "Performers") }
+  constructor() { super("performer", "Performer") }
   
   booleans = {
   }
-  images = {}
+  images = {
+    imageSource: "",
+  }
   numbers = {
     order: null,
   }
@@ -68,7 +70,7 @@ export class Performer extends SiteModel {
   fillConstantExampleData() {
     this.longStrings.bio = "Our founder, lead vocalist and band leader, Behzad Dayanim, brings nearly two decades of national and international performance experience along with several album credits. A graduate of Manhattan School of Music, Behzad represents the best in New York talent, conveniently based in Boston. His proficiency in numerous styles of Jewish and American music is extraordinary and his dedication and commitment to providing unparalleled personalized service defines our philosophy and consistently leaves clients and their guests smiling. Learn more about the orchestra and how it came to be by clicking here.";
     this.shortStrings.name = "Behzad Dayanim";
-    this.shortStrings.imageHref = "http://www.berachorchestra.com/Behzadheadnew.jpg";
+    this.images.imageSource = "http://www.berachorchestra.com/Behzadheadnew.jpg";
     return this;
   }
 
@@ -83,7 +85,7 @@ export class Performer extends SiteModel {
     p.shortStrings.name = data.name;
     p.longStrings.bio = data.bio;
     p.numbers.order = data.order;
-    p.shortStrings.imageHref = data.imageHref;
+    p.images.imageSource = data.imageSource;
     return p;
   }
 }
