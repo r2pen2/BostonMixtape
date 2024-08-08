@@ -172,10 +172,6 @@ export const RecordTray = ({userCanEditText}) => {
           </Carousel.Slide>
         ))}
       </Carousel>
-      <div className="d-flex flex-column align-items-center justify-content-center w-100 px-2 px-sm-3">
-        <WLTextV2 headerLevel={2} firestoreId="hero-text-1" editable={userCanEditText} className="poetsen-one-regular h2-container" />
-        <WLTextV2 headerLevel={2} firestoreId="hero-text-2" editable={userCanEditText} className="poetsen-one-regular h2-container" />
-      </div>
     </div>
   )
 
