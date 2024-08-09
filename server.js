@@ -71,13 +71,11 @@ app.use("/site-auth", siteAuthenticationRouter);
 
 // Allow getting images
 app.get("/images/*", (req, res) => {
-    res.sendFile(__dirname + "static/" + req._parsedOriginalUrl.path);
+    res.sendFile(__dirname + req._parsedOriginalUrl.path);
 })
 
-
-// Allow post to /images, placing an image in the static folder
 app.post("/images/*", (req, res) => {
-    const targetPath = __dirname + "static/" + req._parsedUrl.path;
+    const targetPath = __dirname + req._parsedUrl.path;
     fs.writeFile(targetPath, req.files.file.data, (err) => {
         if (err) {
             console.log(err);
