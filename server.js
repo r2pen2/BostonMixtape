@@ -76,6 +76,7 @@ app.get("/images/*", (req, res) => {
 
 app.post("/images/*", (req, res) => {
     const targetPath = __dirname + req._parsedUrl.path;
+    console.log("POST PATH: " + targetPath);
     fs.writeFile(targetPath, req.files.file.data, (err) => {
         if (err) {
             console.log(err);
