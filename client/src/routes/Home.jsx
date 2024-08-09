@@ -16,6 +16,7 @@ import { CurrentSignInContext } from '../App.jsx'
 import { AuthenticationManager } from '../libraries/Web-Legos/api/auth.ts'
 
 import {AddModelButton, ModelEditButton, ModelEditModal} from "../libraries/Web-Legos/components/Modals.jsx"
+import { getHostname } from '../libraries/Web-Legos/api/development.ts'
 
 
 export default function Home() {
@@ -39,10 +40,11 @@ export default function Home() {
   const Ensemble = () => {
 
     const PerformerSlide = ({performer}) => {
+      console.log(performer)
       return (
         <Carousel.Slide className="px-2" style={{maxWidth: "90vw"}}>
           <Paper style={{background: "#FCB393"}} className="p-0 px-md-2 m-0 pt-2 d-flex flex-column align-items-center justify-content-center">
-            <img src={performer.imageHref} alt={performer.name} style={{height: 200, width: 200, objectFit: "cover", aspectRatio: "1/1", borderRadius: "50%"}}></img>
+            <img src={getHostname() + "/" + performer.imageSource} alt={performer.name} style={{height: 200, width: 200, objectFit: "cover", aspectRatio: "1/1", borderRadius: "50%"}}></img>
             <div className="px-2 d-flex flex-column align-items-center justify-content-center w-100">
               <Text className="poetsen-one-regular performer-text py-2" size="1.5rem" c="#6A2537">{performer.name}</Text>
               <Text className="poetsen-one-regular performer-text pb-2" c="#6A2537">{performer.bio}</Text>
