@@ -4,7 +4,7 @@ import "../assets/style/home.css"
 import { Record, RecordColor, RecordTray } from '../components/homepage/Record'
 
 import {WLHeader, WLHeaderV2, WLText, WLTextV2} from "../libraries/Web-Legos/components/Text"
-import { Button, Paper, Text } from '@mantine/core'
+import { Accordion, Button, Paper, Text } from '@mantine/core'
 import { Contact } from '../components/homepage/Contact'
 import { Performer } from '../api/siteModels.ts'
 import { Carousel } from '@mantine/carousel'
@@ -49,7 +49,19 @@ export default function Home() {
               <Text className="poetsen-one-regular performer-text py-2" size="1.5rem" c="#6A2537">{performer.name}</Text>
               <Text className="poetsen-one-regular performer-text pb-2" c="#6A2537">{performer.bio}</Text>
             </div>
-            <ModelEditButton userCanEdit={userCanEditText} data={performer} model={Performer} setEditModalOpen={setEditModalOpen} setCurrentModel={setCurrentModel} />
+            <ModelEditButton
+              userCanEdit={userCanEditText} 
+              data={performer} 
+              model={Performer} 
+              setEditModalOpen={setEditModalOpen} 
+              setCurrentModel={setCurrentModel}
+              buttonComponent={
+                <Button color="#702137" style={{marginBottom: "1rem"}}>
+                  <Text c="#FCB393" className="poetsen-one-regular">
+                    Edit
+                  </Text>
+                </Button> }
+            />
           </Paper>
         </Carousel.Slide>
       )
@@ -73,7 +85,7 @@ export default function Home() {
           setCurrentModel={setCurrentModel} 
           setEditModalOpen={setEditModalOpen}
           buttonComponent={
-          <Button color="#FCB393">
+          <Button color="#FCB393" style={{marginTop: "1rem"}}>
             <Text c="#702137" className="poetsen-one-regular">
               Add Performer
             </Text>
@@ -167,15 +179,21 @@ export default function Home() {
         </div>
       </section>
       <Ensemble />
-      <section className="red-content">
+      <section style={{position: "relative", paddingTop: 400, paddingBottom: 400}} className="red-content">
         <Peaks />
-        <div className="container-fluid px-2 px-sm-3">
+        <div className="container-fluid px-2 px-sm-3" style={{zIndex: 2}}>
           <div className="row">
             <Repretoire />
             <Services />
           </div>
         </div>
-        <Peaks flip />
+        <PeaksFlipped />
+      </section>
+      <section className="d-flex flex-column align-items-center justify-content-center" style={{backgroundColor: "#9C2C45"}}>
+        <WLHeaderV2 firestoreId="differentiation-header" color="#faebee" className="poetsen-one-regular" editable={userCanEditText} h2 />
+        <Accordion variant="contained">
+          <Accordion.Item label="We are different because..." value="1" />
+        </Accordion>
       </section>
       <Contact />
     </div>
@@ -183,11 +201,19 @@ export default function Home() {
 }
 
 const Peaks = ({flip}) => (
-  <svg className={flip ? "flip-svg" : ""} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" id="visual" version="1.1" viewBox={`0 ${flip ? "90" : "0"} 900 242`}>
+  <svg className={flip ? "flip-svg" : ""} style={{position: "absolute", top: flip ? "0%" : "%100"}} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" id="visual" version="1.1" viewBox={`0 0 900 ${flip ? "600" : "242"}`}>
     <path d="M0 231L129 242L257 167L386 199L514 231L643 190L771 240L900 182L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#c9394f"/>
     <path d="M0 199L129 158L257 196L386 128L514 186L643 177L771 199L900 126L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#b2324a"/>
     <path d="M0 103L129 149L257 106L386 113L514 91L643 133L771 158L900 158L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#9c2c45"/>
-    {!flip && <path d="M0 63L129 75L257 91L386 82L514 112L643 80L771 102L900 65L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#86263e"/>}
-    {!flip && <path d="M0 56L129 35L257 30L386 64L514 71L643 38L771 41L900 58L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#702137"/>}
+    <path d="M0 63L129 75L257 91L386 82L514 112L643 80L771 102L900 65L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#86263e"/>
+    <path d="M0 56L129 35L257 30L386 64L514 71L643 38L771 41L900 58L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#702137"/>
+  </svg>
+)
+
+const PeaksFlipped = () => (
+  <svg style={{position: "absolute", bottom: "0%", transform: "rotate(-180deg)"}} xmlns="http://www.w3.org/2000/svg" xmlnsxlink="http://www.w3.org/1999/xlink" id="visual" version="1.1" viewBox="0 0 900 242">
+    <path d="M0 231L129 242L257 167L386 199L514 231L643 190L771 240L900 182L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#c9394f"/>
+    <path d="M0 199L129 158L257 196L386 128L514 186L643 177L771 199L900 126L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#b2324a"/>
+    <path d="M0 103L129 149L257 106L386 113L514 91L643 133L771 158L900 158L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#9c2c45"/>
   </svg>
 )
