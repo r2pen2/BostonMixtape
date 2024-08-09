@@ -189,10 +189,21 @@ export default function Home() {
         </div>
         <PeaksFlipped />
       </section>
-      <section className="d-flex flex-column align-items-center justify-content-center" style={{backgroundColor: "#9C2C45"}}>
+      <section className="w-100 pb-5 d-flex flex-column align-items-center justify-content-center" style={{backgroundColor: "#9C2C45"}}>
         <WLHeaderV2 firestoreId="differentiation-header" color="#faebee" className="poetsen-one-regular" editable={userCanEditText} h2 />
-        <Accordion variant="contained">
-          <Accordion.Item label="We are different because..." value="1" />
+        <Accordion variant="contained" style={{maxWidth: 1000, width: "100%"}} className="diff-acc">
+          {
+            accordionItems.map((item) => (
+              <Accordion.Item key={item} value={item}>
+                <Accordion.Control>
+                  <WLTextV2 firestoreId={item + "-header"} editable={userCanEditText} />
+                </Accordion.Control>
+                <Accordion.Panel>
+                  <WLTextV2 firestoreId={item + "-body"} editable={userCanEditText} />
+                </Accordion.Panel>
+              </Accordion.Item>
+            ))
+          }
         </Accordion>
       </section>
       <Contact />
@@ -201,7 +212,7 @@ export default function Home() {
 }
 
 const Peaks = ({flip}) => (
-  <svg className={flip ? "flip-svg" : ""} style={{position: "absolute", top: flip ? "0%" : "%100"}} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" id="visual" version="1.1" viewBox={`0 0 900 ${flip ? "600" : "242"}`}>
+  <svg style={{position: "absolute", top: "0%"}} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" id="visual" version="1.1" viewBox={`0 0 900 242`}>
     <path d="M0 231L129 242L257 167L386 199L514 231L643 190L771 240L900 182L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#c9394f"/>
     <path d="M0 199L129 158L257 196L386 128L514 186L643 177L771 199L900 126L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#b2324a"/>
     <path d="M0 103L129 149L257 106L386 113L514 91L643 133L771 158L900 158L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#9c2c45"/>
@@ -217,3 +228,5 @@ const PeaksFlipped = () => (
     <path d="M0 103L129 149L257 106L386 113L514 91L643 133L771 158L900 158L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#9c2c45"/>
   </svg>
 )
+
+const accordionItems = ["diff-air-time"];
