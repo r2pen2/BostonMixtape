@@ -65,7 +65,18 @@ export default function Home() {
         >
           {performers.map((performer, index) => <PerformerSlide key={index} performer={performer} />)}
         </Carousel>
-        <AddModelButton userCanEdit={userCanEditText} model={Performer} setCurrentModel={setCurrentModel} setEditModalOpen={setEditModalOpen} />
+        <AddModelButton
+          userCanEdit={userCanEditText} 
+          model={Performer} 
+          setCurrentModel={setCurrentModel} 
+          setEditModalOpen={setEditModalOpen}
+          buttonComponent={
+          <Button color="#FCB393">
+            <Text c="#702137" className="poetsen-one-regular">
+              Add Performer
+            </Text>
+          </Button> }
+        />
         <WLTextV2 className="wider mt-2 lighter" firestoreId="ensemble-body-2" editable={userCanEditText}/>
       </section>
     )
@@ -168,8 +179,6 @@ export default function Home() {
     </div>
   )
 }
-
-
 
 const Peaks = ({flip}) => (
   <svg className={flip ? "flip-svg" : ""} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" id="visual" version="1.1" viewBox={`0 ${flip ? "90" : "0"} 900 242`}>

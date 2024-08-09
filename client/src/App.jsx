@@ -21,6 +21,7 @@ import { WLTextV2 } from './libraries/Web-Legos/components/Text.jsx';
 
 import { WLFooterSocials } from './libraries/Web-Legos/components/Footer.jsx';
 import  {FooterAuthButton} from "./libraries/Web-Legos/components/Auth.jsx"
+import { setHostname } from './libraries/Web-Legos/api/development.ts';
 
 /** Context to keep track of current user */
 export const CurrentSignInContext = createContext();
@@ -43,6 +44,8 @@ const theme = createWLTheme();
 
 export const BBOMailManager = new MailManager();
 BBOMailManager.addRecipientEmail("joedobbelaar@gmail.com");
+
+setHostname("bbm.joed.dev")
 
 export function App(props) {
 

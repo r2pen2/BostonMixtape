@@ -155,10 +155,9 @@ export const RecordTray = ({userCanEditText}) => {
       
       <Carousel className="record-carousel w-100" getEmblaApi={setEmbla} ref={carouselRef} slideSize="20%" loop onSlideChange={num => setActiveRecord(num)} >
         {tracks.map((track, index) => (
-          <Carousel.Slide className="record-slide" onMouseMove={handleMouseMove}>
+          <Carousel.Slide key={index} className="record-slide" onMouseMove={handleMouseMove}>
             <Record
-              track={track} 
-              key={index} 
+              track={track}
               setMousePosition={setMousePosition} 
               embla={embla} 
               number={0} 
