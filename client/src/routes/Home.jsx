@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 
 import "../assets/style/home.css"
-import { Record, RecordColor, RecordTray } from '../components/homepage/Record'
+import { RecordTray } from '../components/homepage/Record'
 
-import {WLHeader, WLHeaderV2, WLText, WLTextV2} from "../libraries/Web-Legos/components/Text"
+import { WLHeaderV2, WLTextV2} from "../libraries/Web-Legos/components/Text"
 import { Accordion, Button, Paper, Text } from '@mantine/core'
 import { Contact } from '../components/homepage/Contact'
 import { Performer } from '../api/siteModels.ts'
@@ -11,7 +11,7 @@ import { Carousel } from '@mantine/carousel'
 import { SiteModel } from '../libraries/Web-Legos/api/models.ts';
 
 import {TypeAnimation} from "react-type-animation"
-import { IconBrain, IconCalendar, IconExchange, IconMicrophone, IconMicrophone2 } from '@tabler/icons-react'
+import { IconBrain, IconCalendar, IconExchange, IconMicrophone2 } from '@tabler/icons-react'
 import { CurrentSignInContext } from '../App.jsx'
 import { AuthenticationManager } from '../libraries/Web-Legos/api/auth.ts'
 

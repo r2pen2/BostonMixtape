@@ -4,7 +4,6 @@ import "./libraries/Web-Legos/Layouts/wl.css";
 
 // Component Imports
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import powerBrick from "./assets/images/power-brick.gif";
 import { Link, Spacer, Text } from '@nextui-org/react';
 import { createContext, useState } from 'react';
 
