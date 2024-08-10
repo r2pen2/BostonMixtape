@@ -44,7 +44,7 @@ export default function Home() {
     const PerformerSlide = ({performer}) => {
       return (
         <Carousel.Slide className="px-2" style={{maxWidth: "90vw"}}>
-          <Paper style={{background: "#fcb393"}} className="p-0 px-md-2 m-0 pt-2 d-flex flex-row align-items-start text-start justify-content-center h-100">
+          <Paper style={{background: "#fcb393"}} className="p-0 px-md-2 m-0 pt-2 d-flex flex-md-row flex-column align-items-center align-items-md-start text-center text-md-start justify-content-center h-100">
             <div className="px-2 d-flex flex-column align-items-center justify-content-center" style={{minWidth: 200}}>
               <img src={getHostname() + "/" + performer.imageSource} alt={performer.name} style={{height: 200, width: 200, objectFit: "cover", aspectRatio: "1/1", borderRadius: "1rem"}}></img>
               <Text className="poetsen-one-regular performer-text py-2" size="1.5rem" c="var(--splash-text-color)">{performer.name}</Text>
@@ -77,7 +77,7 @@ export default function Home() {
         <WLTextV2 className="wider lighter mb-2" firestoreId="ensemble-body-1" editable={userCanEditText} />
         <Carousel 
           className="performer-container px-md-5 px-1"
-          slideSize={{ base: '90%', sm: '50%' }}
+          slideSize={{ base: '90%', md: '50%' }}
           // align="start"
           loop
         >
