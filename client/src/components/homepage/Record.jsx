@@ -259,7 +259,7 @@ export const Record = ({track, embla, activeRecord, mousePosition, setMousePosit
         {playing[track.number] && <IconPlayerPauseFilled onClick={handlePause} className="record-control-button" />}
         <IconPlayerTrackNextFilled onClick={handleNext} className="record-control-button" />
       </div>
-      <Text className="record-title poetsen-one-regular">{track.title}</Text>
+      <Text className="record-title richard-regular">{track.title}</Text>
     </div>
   )
 }

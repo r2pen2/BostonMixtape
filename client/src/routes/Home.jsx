@@ -170,8 +170,8 @@ export default function Home() {
         </hgroup>
         <RecordTray userCanEditText={userCanEditText} />
         <div className="d-flex flex-column align-items-center justify-content-center w-100 px-2 px-sm-3" style={{position: "absolute", top: "82%"}}>
-          <WLTextV2 headerLevel={2} firestoreId="hero-text-1" editable={userCanEditText} className="poetsen-one-regular hero h2-container" />
-          <WLTextV2 headerLevel={2} firestoreId="hero-text-2" editable={userCanEditText} className="poetsen-one-regular hero h2-container" />
+          <WLTextV2 headerLevel={2} firestoreId="hero-text-1" editable={userCanEditText} className="richard-regular hero h2-container" />
+          <WLTextV2 headerLevel={2} firestoreId="hero-text-2" editable={userCanEditText} className="richard-regular hero h2-container" />
         </div>
       </section>
       <section className="purple-content px-2 px-sm-3 py-5">
