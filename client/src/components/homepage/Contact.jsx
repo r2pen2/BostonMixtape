@@ -36,14 +36,14 @@ export const Contact = () => {
       return <ThankYou />
     }
     return [
-      <WLTextV2 editable={userCanEditText} className="poetsen-one-regular" firestoreId="contact-header" key="contact-header" />,
+      <WLTextV2 editable={userCanEditText} className="richard-regular" firestoreId="contact-header" key="contact-header" />,
       <Input key="name-input" id="name" placeholder="Your Name" size='lg' aria-label='Your Name' className='kiwi w-100' />,
       <Input key="email-input" id="email" placeholder="Your Email" size='lg' aria-label='Your Email' className='kiwi w-100' leftSection={<IconAt size={16} />} />,
       <Textarea key="message-input" id="message" placeholder="Your Message" size='lg' aria-label='Message' className='kiwi w-100' />,
       <div key="button-container" className="d-flex flex-row align-items-center justify-content-center pt-4 gap-2 contact-button-container">
         <div className="contact-line"></div>
           <Button color={"#FCB393"} onClick={() => {setRecaptchaModalOpen(true)}}>
-            <Text className="contact-button poetsen-one-regular mb-0">Contact Us</Text>
+            <Text className="contact-button gibbons-regular mb-0">Contact Us</Text>
           </Button>
         <div className="contact-line"></div>
       </div>

@@ -47,11 +47,11 @@ export default function Home() {
           <Paper style={{background: "#fcb393"}} className="p-0 px-md-2 m-0 pt-2 d-flex flex-md-row flex-column align-items-center align-items-md-start text-center text-md-start justify-content-center h-100">
             <div className="px-2 d-flex flex-column align-items-center justify-content-center" style={{minWidth: 200}}>
               <img src={getHostname() + "/" + performer.imageSource} alt={performer.name} style={{height: 200, width: 200, objectFit: "cover", aspectRatio: "1/1", borderRadius: "1rem"}}></img>
-              <Text className="poetsen-one-regular performer-text py-2" size="1.5rem" c="var(--splash-text-color)">{performer.name}</Text>
+              <Text className="gibbons-regular performer-text py-2" size="1.5rem" c="var(--splash-text-color)">{performer.name}</Text>
             </div>
             <div className="px-2 w-100 d-flex flex-column align-items-start text-left justify-content-center">
               <div className="performer-line"></div>
-              <Text className="poetsen-one-regular performer-text pb-2" c="var(--splash-text-color)">{performer.bio}</Text>
+              <Text className="performer-text pb-2" c="var(--splash-text-color)">{performer.bio}</Text>
               <ModelEditButton
                 userCanEdit={userCanEditText} 
                 data={performer} 
@@ -60,7 +60,7 @@ export default function Home() {
                 setCurrentModel={setCurrentModel}
                 buttonComponent={
                   <Button color="var(--splash-text-color)" style={{marginBottom: "1rem", alignSelf: "end"}}>
-                    <Text c="#FCB393" className="poetsen-one-regular">
+                    <Text c="#FCB393" className="gibbons-regular">
                       Edit
                     </Text>
                   </Button> }
@@ -73,7 +73,7 @@ export default function Home() {
 
     return (
       <section className="purple-content px-2 px-sm-3 py-5 d-flex flex-column align-items-center justify-content-center">
-        <WLHeaderV2 firestoreId="ensemble-header" editable={userCanEditText} h2 className="poetsen-one-regular" />
+        <WLHeaderV2 firestoreId="ensemble-header" editable={userCanEditText} h2 className="gibbons-regular" />
         <WLTextV2 className="wider lighter mb-2" firestoreId="ensemble-body-1" editable={userCanEditText} />
         <Carousel 
           className="performer-container px-md-5 px-1"
@@ -90,7 +90,7 @@ export default function Home() {
           setEditModalOpen={setEditModalOpen}
           buttonComponent={
           <Button color="#FCB393" style={{marginTop: "1rem"}}>
-            <Text c="#702137" className="poetsen-one-regular">
+            <Text c="#702137" className="gibbons-regular">
               Add Performer
             </Text>
           </Button> }
@@ -106,9 +106,9 @@ export default function Home() {
       return (
         <div className="service col-6 py-3 text-start">
         <div className="service-content">
-          <div className="gap-2 d-flex flex-row align-items-center justify-contet-start">
+          <div className="gap-2 d-flex flex-row align-items-start justify-content-start">
             {props.icon}
-            <WLTextV2 firestoreId={props.firestoreId + "-title"} editable={userCanEditText} align="left" className="poetsen-one-regular" />
+            <WLTextV2 firestoreId={props.firestoreId + "-title"} editable={userCanEditText} className="gibbons-regular w-100 text-start" />
           </div>
           <WLTextV2 firestoreId={props.firestoreId + "-description"} editable={userCanEditText} className="service-description" />
         </div>
@@ -118,7 +118,7 @@ export default function Home() {
 
     return (
       <div className="col-12 col-lg-6 py-lg-0 py-5">
-        <WLHeaderV2 h2 className="poetsen-one-regular" firestoreId="services-header" editable={userCanEditText} />
+        <WLHeaderV2 h2 className="gibbons-regular" firestoreId="services-header" editable={userCanEditText} />
         <div className="container-fluid">
           <div className="row">
             <Service firestoreId="service-1"  icon={<IconCalendar size={32} />}     />
@@ -131,24 +131,39 @@ export default function Home() {
     )
   }
 
+  const MetaHeader = () => (
+    <hgroup className="d-none">
+      <h1>BOSTON Mixtape</h1>
+      <h2>Your happiness... set to music.</h2>
+    </hgroup>
+  )
+
   const Repretoire = () => (
     <div className="col-12 col-lg-6 mb-4">
+      <h2 className='gibbons-regular m-0'>WE PLAY</h2>
       <TypeAnimation
         sequence={[
-          'We Play Contemporary Jewish Music', 1000,
-          'We Play Traditional Jewish Music', 1000,
-          'We Play Authentic Israeli Songs', 1000,
-          'We Play Classical Music with String Ensembles', 1000,
-          'We Play Swing and Jazz', 1000,
-          'We Play Motown and R&B', 1000,
-          'We Play Rock n\' Roll', 1000,
-          'We Play Show Tunes', 1000,
-          'We Play Contemporary Hits', 1000
+          "Jazz & Swing", 1000,
+          "Contemporary Hits", 1000,
+          "Traditional Klezmer", 1000,
+          "Funk", 1000,
+          "Show Tunes", 1000,
+          "Popular Hits", 1000,
+          "Contemporary Jewish", 1000,
+          "Motown and R&B", 1000,
+          "American Rock", 1000,
+          "Upbeat Simcha", 1000,
+          "Country", 1000,
+          "Classical", 1000,
+          "Israeli Pop", 1000,
+          // "Hits from the 40’s to Top 40", 1000,
+          // "Your Favorites (or) Your Music", 1000,
+          "What You Love", 1000
         ]}
         wrapper="span"
-        speed={50}
-        className="poetsen-one-regular"
-        style={{ fontSize: '2.5rem', display: 'inline-block' }}
+        speed={70}
+        className="richard-regular m-0"
+        style={{ fontSize: '1.5rem', display: 'inline-block' }}
         repeat={Infinity}
       />
       <WLTextV2 firestoreId="repretoire-body" editable={userCanEditText} />
@@ -159,12 +174,7 @@ export default function Home() {
     <div className="homepage-container">
       <ModelEditModal open={editModalOpen} setOpen={setEditModalOpen} model={currentModel} />
       <section className="home-splash-container">
-        <hgroup className="d-none">
-          <h1 className="anton-regular header-line-1">BERACH</h1>
-          <h1 className="anton-regular header-line-2">Orchestra</h1>
-          <WLHeaderV2 h2 className="poetsen-one-regular">Your happiness... set to music.</WLHeaderV2>
-          {/* <WLHeaderV2 h2 className="poetsen-one-regular">—Newton, MA—</WLHeaderV2> */}
-        </hgroup>
+        <MetaHeader />
         <hgroup className='logo-container'>
           <img src={logo} alt="boston-mixtape-logo" className="homepage-logo"/>
         </hgroup>
@@ -175,12 +185,12 @@ export default function Home() {
         </div>
       </section>
       <section className="purple-content px-2 px-sm-3 py-5">
-        <WLHeaderV2 h2 className="poetsen-one-regular" firestoreId="call-to-action-header" editable={userCanEditText} />
+        <WLHeaderV2 h2 className="gibbons-regular" firestoreId="call-to-action-header" editable={userCanEditText} />
         <WLTextV2 firestoreId="call-to-action-body" editable={userCanEditText} />
         <div className="d-flex flex-row align-items-center justify-content-center pt-4 gap-2 contact-button-container">
           <div className="contact-line"></div>
           <Button color={"#FCB393"} onClick={() => window.location = "/#contact"}>
-            <Text className="contact-button poetsen-one-regular">Contact Us</Text>
+            <Text className="contact-button gibbons-regular">Contact Us</Text>
           </Button>
           <div className="contact-line"></div>
         </div>
@@ -197,7 +207,7 @@ export default function Home() {
         <PeaksFlipped />
       </section>
       <section className="w-100 pb-5 d-flex flex-column align-items-center justify-content-center" style={{backgroundColor: "#9C2C45"}}>
-        <WLHeaderV2 firestoreId="differentiation-header" color="#faebee" className="poetsen-one-regular" editable={userCanEditText} h2 />
+        <WLHeaderV2 firestoreId="differentiation-header" color="#faebee" className="gibbons-regular" editable={userCanEditText} h2 />
         <Accordion variant="contained" style={{maxWidth: 1000, width: "100%"}} className="diff-acc">
           {
             accordionItems.map((item) => (
