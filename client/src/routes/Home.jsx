@@ -18,6 +18,8 @@ import { AuthenticationManager } from '../libraries/Web-Legos/api/auth.ts'
 import {AddModelButton, ModelEditButton, ModelEditModal} from "../libraries/Web-Legos/components/Modals.jsx"
 import { getHostname } from '../libraries/Web-Legos/api/development.ts'
 
+import logo from "../assets/images/homepage/logoPurple.png";
+
 
 export default function Home() {
 
@@ -46,8 +48,8 @@ export default function Home() {
           <Paper style={{background: "#FCB393"}} className="p-0 px-md-2 m-0 pt-2 d-flex flex-column align-items-center justify-content-center">
             <img src={getHostname() + "/" + performer.imageSource} alt={performer.name} style={{height: 200, width: 200, objectFit: "cover", aspectRatio: "1/1", borderRadius: "50%"}}></img>
             <div className="px-2 d-flex flex-column align-items-center justify-content-center w-100">
-              <Text className="poetsen-one-regular performer-text py-2" size="1.5rem" c="#6A2537">{performer.name}</Text>
-              <Text className="poetsen-one-regular performer-text pb-2" c="#6A2537">{performer.bio}</Text>
+              <Text className="poetsen-one-regular performer-text py-2" size="1.5rem" c="var(--splash-text-color)">{performer.name}</Text>
+              <Text className="poetsen-one-regular performer-text pb-2" c="var(--splash-text-color)">{performer.bio}</Text>
             </div>
             <ModelEditButton
               userCanEdit={userCanEditText} 
@@ -56,7 +58,7 @@ export default function Home() {
               setEditModalOpen={setEditModalOpen} 
               setCurrentModel={setCurrentModel}
               buttonComponent={
-                <Button color="#702137" style={{marginBottom: "1rem"}}>
+                <Button color="var(--splash-text-color)" style={{marginBottom: "1rem"}}>
                   <Text c="#FCB393" className="poetsen-one-regular">
                     Edit
                   </Text>
@@ -155,11 +157,14 @@ export default function Home() {
     <div className="homepage-container">
       <ModelEditModal open={editModalOpen} setOpen={setEditModalOpen} model={currentModel} />
       <section className="home-splash-container">
-        <hgroup>
+        <hgroup className="d-none">
           <h1 className="anton-regular header-line-1">BERACH</h1>
           <h1 className="anton-regular header-line-2">Orchestra</h1>
           <WLHeaderV2 h2 className="poetsen-one-regular">Your happiness... set to music.</WLHeaderV2>
           {/* <WLHeaderV2 h2 className="poetsen-one-regular">—Newton, MA—</WLHeaderV2> */}
+        </hgroup>
+        <hgroup className='logo-container'>
+          <img src={logo} alt="boston-mixtape-logo" className="homepage-logo"/>
         </hgroup>
         <RecordTray userCanEditText={userCanEditText} />
         <div className="d-flex flex-column align-items-center justify-content-center w-100 px-2 px-sm-3" style={{position: "absolute", top: "82%"}}>
