@@ -6,9 +6,11 @@ import { RecordTray } from '../components/homepage/Record'
 import { WLHeaderV2, WLTextV2} from "../libraries/Web-Legos/components/Text"
 import { Accordion, Button, Paper, Text } from '@mantine/core'
 import { Contact } from '../components/homepage/Contact'
-import { Performer } from '../api/siteModels.ts'
+import { FeaturedVideo, Performer } from '../api/siteModels.ts'
 import { Carousel } from '@mantine/carousel'
 import { SiteModel } from '../libraries/Web-Legos/api/models.ts';
+import { WLYoutubeEmbed } from '../libraries/Web-Legos/components/Media';
+import { getYoutubeEmbedCode } from '../libraries/Web-Legos/api/media.ts';
 
 import {TypeAnimation} from "react-type-animation"
 import { IconBrain, IconCalendar, IconExchange, IconMicrophone2 } from '@tabler/icons-react'
@@ -34,9 +36,12 @@ export default function Home() {
   const [currentModel, setCurrentModel] = useState(new SiteModel());
   const [editModalOpen, setEditModalOpen] = useState(false);
 
+  const [featuredVideo, setFeaturedVideo] = useState([]);
+
   useEffect(() => {
     authenticationManager.getPermission(currentSignIn, "siteText").then(p => setUserCanEditText(p));
     Performer.getAndSet(setPerformers);
+    FeaturedVideo.getAndSet(setFeaturedVideo);
   }, [currentSignIn, authenticationManager]);
 
   const [performers, setPerformers] = useState([])
@@ -106,13 +111,13 @@ export default function Home() {
 
     const Service = (props) => {
       return (
-        <div className="service col-6 py-3 text-start">
+        <div className="service col-md-6 py-3 col-12 text-start">
         <div className="service-content" id='services'>
           <div className="gap-2 d-flex flex-row align-items-start justify-content-start">
             {props.icon}
             <WLTextV2 firestoreId={props.firestoreId + "-title"} editable={userCanEditText} className="gibbons-regular w-100 text-start" />
           </div>
-          <WLTextV2 firestoreId={props.firestoreId + "-description"} editable={userCanEditText} className="service-description" />
+          <WLTextV2 firestoreId={props.firestoreId + "-description"} editable={userCanEditText} className="service-description w-100" />
         </div>
       </div>
       )
@@ -181,7 +186,7 @@ export default function Home() {
           <img src={logo} alt="boston-mixtape-logo" className="homepage-logo"/>
         </hgroup>
         <RecordTray userCanEditText={userCanEditText} />
-        <div className="d-flex flex-column align-items-center justify-content-center w-100 px-2 px-sm-3" style={{position: "absolute", top: "82%"}}>
+        <div className="d-flex flex-column align-items-center justify-content-center w-100 px-2 px-sm-3" style={{position: "absolute", bottom: "10vh"}}>
           <WLTextV2 headerLevel={2} firestoreId="hero-text-1" editable={userCanEditText} className="richard-regular hero h2-container" />
           <WLTextV2 headerLevel={2} firestoreId="hero-text-2" editable={userCanEditText} className="richard-regular hero h2-container" />
         </div>
@@ -189,7 +194,7 @@ export default function Home() {
       <section className="purple-content px-2 px-sm-3 py-5">
         <WLHeaderV2 h2 className="gibbons-regular" firestoreId="call-to-action-header" editable={userCanEditText} />
         <WLTextV2 firestoreId="call-to-action-body" editable={userCanEditText} />
-        <div className="d-flex flex-row align-items-center justify-content-center pt-4 gap-2 contact-button-container">
+        <div className="d-flex flex-row align-items-center justify-content-center pt-4 gap-2 contact-button-container w-100">
           <div className="contact-line"></div>
           <Button color={"#FCB393"} onClick={() => window.location = "/#contact"}>
             <Text className="contact-button gibbons-regular">Contact Us</Text>
@@ -197,8 +202,26 @@ export default function Home() {
           <div className="contact-line"></div>
         </div>
       </section>
+      <section className='purple-content d-flex align-items-center justify-content-center flex-column pb-5'>
+        <WLHeaderV2 firestoreId="featured-video-header" color="#faebee" className="gibbons-regular" editable={userCanEditText} h2 />
+        <WLYoutubeEmbed maxWidth={600} embedCode={featuredVideo[0] ? getYoutubeEmbedCode(featuredVideo[0].embedCode) : ""} />
+        <ModelEditButton
+          userCanEdit={userCanEditText}
+          model={FeaturedVideo}
+          data={featuredVideo[0]}
+          setEditModalOpen={setEditModalOpen}
+          setCurrentModel={setCurrentModel}
+          buttonComponent={
+            <Button color={"#FCB393"} style={{marginTop: "1rem", alignSelf: "center"}}>
+              <Text c="#702137" className="gibbons-regular">
+                Change Video
+              </Text>
+            </Button>  
+          }
+        />
+      </section>
       <Ensemble />
-      <section style={{position: "relative", paddingTop: 400, paddingBottom: 200}} className="red-content">
+      <section style={{position: "relative"}} className="red-content peaks-responsive">
         <Peaks />
         <div className="container-fluid px-2 px-sm-3" style={{zIndex: 2}}>
           <div className="row">

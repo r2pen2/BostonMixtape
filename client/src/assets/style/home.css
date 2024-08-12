@@ -235,11 +235,21 @@ h2.hero {
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.75));
 }
 
+.peaks-responsive {
+  padding-top: 300px;
+  padding-bottom: 200px;
+}
 
 @media (max-width: 768px) {
 
   .record-tray {
-    padding-top: 4rem;
+    justify-content: flex-start;
+    padding-top: 25vh;
+  }
+
+  .peaks-responsive {
+    padding-top: 100px;
+    padding-bottom: 0px;
   }
 
   .record {

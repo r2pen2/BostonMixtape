@@ -1,5 +1,5 @@
 // @ts-ignore
-import { FirestoreSerializable, SiteModel } from "../libraries/Web-Legos/api/models.ts";
+import { FirestoreSerializable, SiteModel, StaticSiteModel } from "../libraries/Web-Legos/api/models.ts";
 
 export class ExampleModel extends SiteModel implements FirestoreSerializable {
   constructor() {
@@ -86,5 +86,50 @@ export class Performer extends SiteModel {
     p.numbers.order = data.order;
     p.images.imageSource = data.imageSource;
     return p;
+  }
+}
+
+export class FeaturedVideo extends StaticSiteModel {
+  constructor() {
+    super("featured-video", "Featured Video")
+  }
+  
+  editText = "Change Video"
+
+  booleans = {}
+  images = {
+  }
+  numbers = {
+  }
+  shortStrings = {
+    embedCode: "",
+  }
+  longStrings = {}
+
+  fillConstantExampleData(linkType?: number) {
+    if (linkType) {
+      if (linkType === 1) {
+        this.shortStrings.embedCode = "https://youtu.be/4YuNvIfM-YA"
+      }
+      if (linkType === 2) {
+        this.shortStrings.embedCode = "https://www.youtube.com/watch?v=MXtTXmZp41I&ab_channel=EducationEntertainment-TV"
+      }
+    } else {
+      this.shortStrings.embedCode = "rNOzgQm63BE";
+    }
+    return this;
+  }
+
+  static examples = {
+    default: (new FeaturedVideo()).fillConstantExampleData().toFirestore(),
+    shortLink: (new FeaturedVideo()).fillConstantExampleData(1).toFirestore(),
+    longLink: (new FeaturedVideo()).fillConstantExampleData(2).toFirestore(),
+  }
+
+  fromFirestore(data: any) : FeaturedVideo {
+    const gv = new FeaturedVideo();
+    gv.id = data.id;
+    gv.shortStrings.embedCode = data.embedCode;
+    return gv;
   }
 }

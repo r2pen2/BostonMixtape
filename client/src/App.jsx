@@ -46,6 +46,8 @@ const theme = createWLTheme();
 
 export const BBOMailManager = new MailManager();
 BBOMailManager.addRecipientEmail("joedobbelaar@gmail.com");
+BBOMailManager.addRecipientEmail("BostonMixtapeInfo@gmail.com");
+BBOMailManager.addRecipientEmail("BBMbostonsbestmusic@gmail.com");
 
 setHostname("bbm.joed.dev")
 
