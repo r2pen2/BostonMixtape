@@ -90,24 +90,17 @@ export function App(props) {
               <Routes>
                 <Route path="/" element={<Home />} />
               </Routes>
-            {/** Place Footer Here */}
           </div>
           
-          <footer className="pt-5 flex-column align-items-center justify-content-center">
+          <footer className="pt-2 flex-column align-items-center justify-content-center">
                 <div className="d-flex flex-column align-items-center justify-content-center">
-                  {/* <WLHeaderV2 size="$4xl" align="center">A New Day Coaching</WLHeaderV2>           */}
-                  {/* <img src={logoTransparent} alt="A New Day Coaching" style={{width: "400px"}} /> */}
                   <WLTextV2 firestoreId="contact-name" />
                   <Link href="mailto:bbm@gmail.com">
                     <Text css={{textDecoration:"underline"}}>bbm@gmail.com</Text>
                   </Link>
-                <Spacer y={1} />
                 <WLFooterSocials>
                   <WLFooterSocials.Button color="#b3324a" size="42" platformKey="facebook" href="https://www.facebook.com/berachorchestra/" />
                 </WLFooterSocials>
-                  {/* <Link href="callto:2027982343">
-                    <Text css={{textDecoration:"underline"}}>(202) 798-ADHD</Text>
-                  </Link> */}
                 </div>
                 <div className="d-lg-flex w-100 d-none flex-row gap-2 align-items-end justify-content-around">
                   <Link href="https://www.joed.dev">

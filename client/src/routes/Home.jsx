@@ -19,6 +19,7 @@ import {AddModelButton, ModelEditButton, ModelEditModal} from "../libraries/Web-
 import { getHostname } from '../libraries/Web-Legos/api/development.ts'
 
 import logo from "../assets/images/homepage/logoPurple.png";
+import { Spacer } from '@nextui-org/react'
 
 
 export default function Home() {
@@ -206,7 +207,7 @@ export default function Home() {
         </div>
         <PeaksFlipped />
       </section>
-      <section className="w-100 pb-5 d-flex flex-column align-items-center justify-content-center gap-2 px-2 px-md-4" style={{backgroundColor: "#9C2C45"}}>
+      <section className="w-100 d-flex flex-column mountains align-items-center justify-content-center gap-2 px-2 px-md-4" style={{backgroundColor: "#9C2C45", paddingTop: "6rem"}}>
         <hgroup>
           <WLHeaderV2 firestoreId="differentiation-header" color="#faebee" className="gibbons-regular" editable={userCanEditText} h2 />
           <WLTextV2 firestoreId="differentiation-subheader" color="#faebee" className="richard-regular" editable={userCanEditText} />
@@ -225,8 +226,9 @@ export default function Home() {
             ))
           }
         </Accordion>
+        <Spacer y={2} />
+        <Contact />
       </section>
-      <Contact />
     </div>
   )
 }
@@ -242,7 +244,7 @@ const Peaks = ({flip}) => (
 )
 
 const PeaksFlipped = () => (
-  <svg style={{position: "absolute", bottom: "0%", transform: "rotate(-180deg)"}} xmlns="http://www.w3.org/2000/svg" xmlnsxlink="http://www.w3.org/1999/xlink" id="visual" version="1.1" viewBox="0 50 900 242">
+  <svg style={{position: "absolute", bottom: "0%", transform: "rotate(-180deg)"}} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" id="visual" version="1.1" viewBox="0 50 900 242">
     <path d="M0 231L129 242L257 167L386 199L514 231L643 190L771 240L900 182L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#c9394f"/>
     <path d="M0 199L129 158L257 196L386 128L514 186L643 177L771 199L900 126L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#b2324a"/>
     <path d="M0 103L129 149L257 106L386 113L514 91L643 133L771 158L900 158L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#9c2c45"/>

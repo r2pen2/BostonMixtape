@@ -257,6 +257,10 @@ h2.hero {
   }
 }
 
+.z-high {
+  z-index: 99;
+}
+
 section.purple-content {
   background-color: #702137;
   display: flex;
@@ -266,6 +270,14 @@ section.purple-content {
   padding-top: 2rem;
   width: 100%;
 }
+
+.mountains {
+  position: relative;
+  background: url("../images/homepage/mountains.png");
+  background-size: cover;
+  background-position: top;
+}
+
 section.red-content {
   background-color: #C9394F;
   display: flex;
