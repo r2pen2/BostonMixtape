@@ -271,7 +271,7 @@ h2.hero {
   }
 
   .hero-container {
-    margin-top: 4rem;
+    transform: translateY(4rem)
   }
 }
 
