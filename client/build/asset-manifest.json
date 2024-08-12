@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.ececee95.css",
-    "main.js": "/static/js/main.1c21571a.js",
-    "static/media/fullSplash.png": "/static/media/fullSplash.054f9f6a97d6c42a284a.png",
+    "main.css": "/static/css/main.bd2bbda5.css",
+    "main.js": "/static/js/main.56fd1292.js",
+    "static/media/fullSplash.png": "/static/media/fullSplash.d0ebd5216fe25b48ea9f.png",
     "static/media/summerOf69.mp3": "/static/media/summerOf69.bba76299481f545e7836.mp3",
     "static/media/recordPurple.png": "/static/media/recordPurple.f46e11dfcec40d4eb433.png",
     "static/media/recordHotPink.png": "/static/media/recordHotPink.f96d9cfdec44bed5da72.png",
@@ -15,6 +15,7 @@
     "static/media/recordLava.png": "/static/media/recordLava.564bc590f30b100042fb.png",
     "static/media/recordGreen.png": "/static/media/recordGreen.d9c01f70cb7bfc04ca4e.png",
     "static/media/recordSteel.png": "/static/media/recordSteel.b3a38505dbdd1b709a1e.png",
+    "static/media/mountains.png": "/static/media/mountains.2fc9ff846f997d80b93b.png",
     "static/media/myGirl.mp3": "/static/media/myGirl.6ca921dc9b1cda29b775.mp3",
     "static/media/haveIToldYouLately.mp3": "/static/media/haveIToldYouLately.6ff02a78147994e141e5.mp3",
     "static/media/mustangSally.mp3": "/static/media/mustangSally.8126408de0d4de326cf9.mp3",
@@ -25,14 +26,15 @@
     "static/media/allRightNow.mp3": "/static/media/allRightNow.e0652beee484469c08cd.mp3",
     "static/media/glare.png": "/static/media/glare.07f7f8a19d94d5a55c8e.png",
     "static/media/recordCenter.png": "/static/media/recordCenter.60fcaa18770874b7e6e1.png",
-    "static/media/logoPurple.png": "/static/media/logoPurple.f57eaef233bf1443b4f1.png",
+    "static/media/casette.png": "/static/media/casette.29f1bf0ff3c9969521cc.png",
+    "static/media/logoPurple.png": "/static/media/logoPurple.4ed1b84b5338d732a0a2.png",
     "static/media/hexagons.svg": "/static/media/hexagons.6a7d35e57ab9acd2a95f.svg",
     "index.html": "/index.html",
-    "main.ececee95.css.map": "/static/css/main.ececee95.css.map",
-    "main.1c21571a.js.map": "/static/js/main.1c21571a.js.map"
+    "main.bd2bbda5.css.map": "/static/css/main.bd2bbda5.css.map",
+    "main.56fd1292.js.map": "/static/js/main.56fd1292.js.map"
   },
   "entrypoints": [
-    "static/css/main.ececee95.css",
-    "static/js/main.1c21571a.js"
+    "static/css/main.bd2bbda5.css",
+    "static/js/main.56fd1292.js"
   ]
 }

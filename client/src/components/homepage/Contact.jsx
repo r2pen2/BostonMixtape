@@ -67,7 +67,7 @@ export const Contact = () => {
       console.log(getEmailBody());
   
       BBOMailManager.sendMail(
-        `New ANewDayCoaching Contact Form Submission from ${name}`,
+        `New BostonMixtape Contact Form Submission from ${name}`,
         getEmailBody()
       );
   
@@ -122,6 +122,7 @@ export const Contact = () => {
         </form>
         <Spacer y={1} />
       </div>
+      <CaptchaModal />
     </section>
   )
 }
