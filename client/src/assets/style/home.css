@@ -445,3 +445,7 @@ a.nav-link:hover {
   color: #3D1520 !important;
   transform: scale(1.25);
 }
+
+* {
+  scroll-padding-top: 6rem;
+}

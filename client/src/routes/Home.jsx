@@ -21,7 +21,6 @@ import { getHostname } from '../libraries/Web-Legos/api/development.ts'
 
 import logo from "../assets/images/homepage/logoPurple.png";
 import { Spacer } from '@nextui-org/react'
-import { useRef } from 'react'
 
 
 export default function Home() {
@@ -75,7 +74,7 @@ export default function Home() {
     }
 
     return (
-      <section className="purple-content px-2 px-sm-3 py-5 d-flex flex-column align-items-center justify-content-center">
+      <section id="ensemble" className="purple-content px-2 px-sm-3 py-5 d-flex flex-column align-items-center justify-content-center">
         <WLHeaderV2 firestoreId="ensemble-header" editable={userCanEditText} h2 className="gibbons-regular" />
         <WLTextV2 className="wider lighter mb-2" firestoreId="ensemble-body-1" editable={userCanEditText} />
         <Carousel 
@@ -108,7 +107,7 @@ export default function Home() {
     const Service = (props) => {
       return (
         <div className="service col-6 py-3 text-start">
-        <div className="service-content">
+        <div className="service-content" id='services'>
           <div className="gap-2 d-flex flex-row align-items-start justify-content-start">
             {props.icon}
             <WLTextV2 firestoreId={props.firestoreId + "-title"} editable={userCanEditText} className="gibbons-regular w-100 text-start" />
@@ -141,8 +140,8 @@ export default function Home() {
     </hgroup>
   )
 
-  const Repretoire = () => (
-    <div className="col-12 col-lg-6 mb-4">
+  const Repertoire = () => (
+    <div className="col-12 col-lg-6 mb-4" id="repertoire">
       <h2 className='gibbons-regular m-0'>WE PLAY</h2>
       <TypeAnimation
         sequence={[
@@ -176,7 +175,7 @@ export default function Home() {
   return (
     <div className="homepage-container">
       <ModelEditModal open={editModalOpen} setOpen={setEditModalOpen} model={currentModel} />
-      <section className="home-splash-container">
+      <section className="home-splash-container" id="home">
         <MetaHeader />
         <hgroup className='logo-container'>
           <img src={logo} alt="boston-mixtape-logo" className="homepage-logo"/>
@@ -203,14 +202,14 @@ export default function Home() {
         <Peaks />
         <div className="container-fluid px-2 px-sm-3" style={{zIndex: 2}}>
           <div className="row">
-            <Repretoire />
+            <Repertoire />
             <Services />
           </div>
         </div>
         <PeaksFlipped />
       </section>
       <section className="w-100 d-flex flex-column mountains align-items-center justify-content-center gap-2 px-2 px-md-4" style={{backgroundColor: "#9C2C45", paddingTop: "6rem"}}>
-        <hgroup>
+        <hgroup id="differentiation">
           <WLHeaderV2 firestoreId="differentiation-header" color="#faebee" className="gibbons-regular" editable={userCanEditText} h2 />
           <WLTextV2 firestoreId="differentiation-subheader" color="#faebee" className="richard-regular" editable={userCanEditText} />
         </hgroup>
