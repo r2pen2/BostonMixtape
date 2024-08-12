@@ -119,6 +119,8 @@ export const RecordTray = ({userCanEditText}) => {
 
   const [embla, setEmbla] = useState(null);
 
+  const [clicked, setClicked] = useState(null);
+
   useEffect(() => {
     if (!audios[activeRecord]) {
       const audio = new Audio(tracks[activeRecord].audioHref);
@@ -167,6 +169,8 @@ export const RecordTray = ({userCanEditText}) => {
               playing={playing}
               setPlaying={setPlaying}
               numRecords={tracks.length}
+              pulse={!clicked}
+              stopPulse={() => setClicked(true)}
             />
           </Carousel.Slide>
         ))}
@@ -176,7 +180,7 @@ export const RecordTray = ({userCanEditText}) => {
 
 }
 
-export const Record = ({track, embla, activeRecord, mousePosition, setMousePosition, setActiveRecord, playing, setPlaying, numRecords}) => {
+export const Record = ({track, embla, activeRecord, mousePosition, setMousePosition, setActiveRecord, playing, setPlaying, numRecords, pulse, stopPulse}) => {
 
   function getSrc() {
     switch(track.color) {
@@ -234,6 +238,7 @@ export const Record = ({track, embla, activeRecord, mousePosition, setMousePosit
     setPlaying(newPlaying);
     recordRef.current.style.animationPlayState = "running";
     recordCenterRef.current.style.animationPlayState = "running";
+    if (pulse) { stopPulse() }
   }
   
   const handlePause = () => {
@@ -255,7 +260,7 @@ export const Record = ({track, embla, activeRecord, mousePosition, setMousePosit
       <img src={recordGlare} alt={"record-glare-" + track.color} className="record-glare" style={{ transform: `rotate(${glareRotation}deg)` }} />
       <div className="record-controls gap-2">      
         <IconPlayerTrackPrevFilled onClick={handleLast} className="record-control-button" />
-        {!playing[track.number] && <IconPlayerPlayFilled onClick={handlePlay} className="record-control-button" />}
+        {!playing[track.number] && <IconPlayerPlayFilled onClick={handlePlay} className={"record-control-button" + (pulse ? " pulse" : "")} />}
         {playing[track.number] && <IconPlayerPauseFilled onClick={handlePause} className="record-control-button" />}
         <IconPlayerTrackNextFilled onClick={handleNext} className="record-control-button" />
       </div>

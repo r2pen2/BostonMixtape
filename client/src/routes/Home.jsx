@@ -196,7 +196,7 @@ export default function Home() {
         </div>
       </section>
       <Ensemble />
-      <section style={{position: "relative", paddingTop: 400, paddingBottom: 400}} className="red-content">
+      <section style={{position: "relative", paddingTop: 400, paddingBottom: 200}} className="red-content">
         <Peaks />
         <div className="container-fluid px-2 px-sm-3" style={{zIndex: 2}}>
           <div className="row">
@@ -206,17 +206,20 @@ export default function Home() {
         </div>
         <PeaksFlipped />
       </section>
-      <section className="w-100 pb-5 d-flex flex-column align-items-center justify-content-center" style={{backgroundColor: "#9C2C45"}}>
-        <WLHeaderV2 firestoreId="differentiation-header" color="#faebee" className="gibbons-regular" editable={userCanEditText} h2 />
-        <Accordion variant="contained" style={{maxWidth: 1000, width: "100%"}} className="diff-acc">
+      <section className="w-100 pb-5 d-flex flex-column align-items-center justify-content-center gap-2 px-2 px-md-4" style={{backgroundColor: "#9C2C45"}}>
+        <hgroup>
+          <WLHeaderV2 firestoreId="differentiation-header" color="#faebee" className="gibbons-regular" editable={userCanEditText} h2 />
+          <WLTextV2 firestoreId="differentiation-subheader" color="#faebee" className="richard-regular" editable={userCanEditText} />
+        </hgroup>
+        <Accordion variant="contained" style={{maxWidth: 1000, width: "100%"}} className="diff-acc px-2">
           {
             accordionItems.map((item) => (
               <Accordion.Item key={item} value={item}>
                 <Accordion.Control>
-                  <WLTextV2 firestoreId={item + "-header"} editable={userCanEditText} />
+                  <WLTextV2 firestoreId={item + "-header"} className="richard-regular" color="#faebee" editable={userCanEditText} />
                 </Accordion.Control>
                 <Accordion.Panel>
-                  <WLTextV2 firestoreId={item + "-body"} editable={userCanEditText} />
+                  <WLTextV2 firestoreId={item + "-body"} color="#faebee" size="1.125rem" editable={userCanEditText} />
                 </Accordion.Panel>
               </Accordion.Item>
             ))
@@ -239,11 +242,11 @@ const Peaks = ({flip}) => (
 )
 
 const PeaksFlipped = () => (
-  <svg style={{position: "absolute", bottom: "0%", transform: "rotate(-180deg)"}} xmlns="http://www.w3.org/2000/svg" xmlnsxlink="http://www.w3.org/1999/xlink" id="visual" version="1.1" viewBox="0 0 900 242">
+  <svg style={{position: "absolute", bottom: "0%", transform: "rotate(-180deg)"}} xmlns="http://www.w3.org/2000/svg" xmlnsxlink="http://www.w3.org/1999/xlink" id="visual" version="1.1" viewBox="0 50 900 242">
     <path d="M0 231L129 242L257 167L386 199L514 231L643 190L771 240L900 182L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#c9394f"/>
     <path d="M0 199L129 158L257 196L386 128L514 186L643 177L771 199L900 126L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#b2324a"/>
     <path d="M0 103L129 149L257 106L386 113L514 91L643 133L771 158L900 158L900 0L771 0L643 0L514 0L386 0L257 0L129 0L0 0Z" fill="#9c2c45"/>
   </svg>
 )
 
-const accordionItems = ["diff-air-time"];
+const accordionItems = ["diff-air-time", "diff-special-requests", "diff-ego", "diff-volume", "diff-dj", "diff-dance", "diff-culture", "diff-composition", "diff-media", "diff-games", "diff-logo", "diff-concert", "diff-charity"];
