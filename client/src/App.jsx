@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Link, Spacer, Text } from '@nextui-org/react';
 import { createContext, useState } from 'react';
 
+import logo from "./assets/images/homepage/casette.png"
+
 // API Imports
 import { firebaseConfig } from './api/firebase.ts'
 import { AuthenticationManager, WLPermissionsConfig } from './libraries/Web-Legos/api/auth.ts'
@@ -21,6 +23,7 @@ import { WLTextV2 } from './libraries/Web-Legos/components/Text.jsx';
 import { WLFooterSocials } from './libraries/Web-Legos/components/Footer.jsx';
 import  {FooterAuthButton} from "./libraries/Web-Legos/components/Auth.jsx"
 import { setHostname } from './libraries/Web-Legos/api/development.ts';
+import { Nav } from './components/Nav.jsx';
 
 /** Context to keep track of current user */
 export const CurrentSignInContext = createContext();
@@ -86,7 +89,7 @@ export function App(props) {
         { isTestingEnvironment && <meta data-testid="wl-testing-flag" /> }
         <Router>
           <div className="app-content">
-            {/** Place Navigation Here */}
+              <Nav />
               <Routes>
                 <Route path="/" element={<Home />} />
               </Routes>
@@ -94,7 +97,8 @@ export function App(props) {
           
           <footer className="pt-2 flex-column align-items-center justify-content-center">
                 <div className="d-flex flex-column align-items-center justify-content-center">
-                  <WLTextV2 firestoreId="contact-name" />
+                  <WLTextV2 className="gibbons-regular" firestoreId="contact-name" />
+                  <img src={logo} alt="Boston Mixtape Logo" style={{width: 300}}  />
                   <Link href="mailto:bbm@gmail.com">
                     <Text css={{textDecoration:"underline"}}>bbm@gmail.com</Text>
                   </Link>

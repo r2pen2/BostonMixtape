@@ -15,11 +15,13 @@ import { IconBrain, IconCalendar, IconExchange, IconMicrophone2 } from '@tabler/
 import { CurrentSignInContext } from '../App.jsx'
 import { AuthenticationManager } from '../libraries/Web-Legos/api/auth.ts'
 
+
 import {AddModelButton, ModelEditButton, ModelEditModal} from "../libraries/Web-Legos/components/Modals.jsx"
 import { getHostname } from '../libraries/Web-Legos/api/development.ts'
 
 import logo from "../assets/images/homepage/logoPurple.png";
 import { Spacer } from '@nextui-org/react'
+import { useRef } from 'react'
 
 
 export default function Home() {
@@ -170,7 +172,7 @@ export default function Home() {
       <WLTextV2 firestoreId="repretoire-body" editable={userCanEditText} />
     </div>
   )
-  
+
   return (
     <div className="homepage-container">
       <ModelEditModal open={editModalOpen} setOpen={setEditModalOpen} model={currentModel} />

@@ -434,3 +434,14 @@ section.light-purple-content * p:not(.performer-text).lighter  {
 .nextui-button {
   border: 1px solid #00000022;
 }
+
+a.nav-link {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  transition: all 0.25s ease;
+}
+
+a.nav-link:hover {
+  color: #3D1520 !important;
+  transform: scale(1.25);
+}
