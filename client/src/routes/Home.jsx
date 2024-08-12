@@ -194,7 +194,7 @@ export default function Home() {
       <section className="purple-content px-2 px-sm-3 py-5">
         <WLHeaderV2 h2 className="gibbons-regular" firestoreId="call-to-action-header" editable={userCanEditText} />
         <WLTextV2 firestoreId="call-to-action-body" editable={userCanEditText} />
-        <div className="d-flex flex-row align-items-center justify-content-center pt-4 gap-2 contact-button-container w-100">
+        <div className="d-flex flex-row align-items-center justify-content-center pt-4 gap-2 contact-button-container">
           <div className="contact-line"></div>
           <Button color={"#FCB393"} onClick={() => window.location = "/#contact"}>
             <Text className="contact-button gibbons-regular">Contact Us</Text>
