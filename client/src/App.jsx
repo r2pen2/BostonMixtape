@@ -104,6 +104,9 @@ export function App(props) {
                   <Link href="mailto:bbmbostonsbestmusic@gmail.com">
                     <Text css={{textDecoration:"underline"}}>Click Here to Email Us</Text>
                   </Link>
+                  <Link href="callto:6178773206">
+                    <Text css={{textDecoration:"underline"}}>Click Here to Call</Text>
+                  </Link>
                 <WLFooterSocials>
                   <WLFooterSocials.Button color="#b3324a" size="42" platformKey="facebook" href="https://www.facebook.com/berachorchestra/" />
                 </WLFooterSocials>
