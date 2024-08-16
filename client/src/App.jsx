@@ -101,8 +101,8 @@ export function App(props) {
                 <div className="d-flex flex-column align-items-center justify-content-center">
                   <WLTextV2 className="gibbons-regular" firestoreId="contact-name" />
                   <img src={logo} alt="Boston Mixtape Logo" style={{width: 300}}  />
-                  <Link href="mailto:bbm@gmail.com">
-                    <Text css={{textDecoration:"underline"}}>bbm@gmail.com</Text>
+                  <Link href="mailto:bbmbostonsbestmusic@gmail.com">
+                    <Text css={{textDecoration:"underline"}}>Click Here to Email Us</Text>
                   </Link>
                 <WLFooterSocials>
                   <WLFooterSocials.Button color="#b3324a" size="42" platformKey="facebook" href="https://www.facebook.com/berachorchestra/" />
