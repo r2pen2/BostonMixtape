@@ -1,12 +1,7 @@
 {
   "files": {
-<<<<<<< HEAD
     "main.css": "/static/css/main.91fb14bb.css",
-    "main.js": "/static/js/main.a3415a0c.js",
-=======
-    "main.css": "/static/css/main.34071a15.css",
     "main.js": "/static/js/main.cbe660ee.js",
->>>>>>> 6cfae5c522aefebc172fd836487227cd7d8ddcf3
     "static/media/fullSplash.png": "/static/media/fullSplash.d0ebd5216fe25b48ea9f.png",
     "static/media/summerOf69.mp3": "/static/media/summerOf69.bba76299481f545e7836.mp3",
     "static/media/recordPurple.png": "/static/media/recordPurple.f46e11dfcec40d4eb433.png",
@@ -35,20 +30,11 @@
     "static/media/logoPurple.png": "/static/media/logoPurple.4ed1b84b5338d732a0a2.png",
     "static/media/hexagons.svg": "/static/media/hexagons.6a7d35e57ab9acd2a95f.svg",
     "index.html": "/index.html",
-<<<<<<< HEAD
     "main.91fb14bb.css.map": "/static/css/main.91fb14bb.css.map",
-    "main.a3415a0c.js.map": "/static/js/main.a3415a0c.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.91fb14bb.css",
-    "static/js/main.a3415a0c.js"
-=======
-    "main.34071a15.css.map": "/static/css/main.34071a15.css.map",
     "main.cbe660ee.js.map": "/static/js/main.cbe660ee.js.map"
   },
   "entrypoints": [
-    "static/css/main.34071a15.css",
+    "static/css/main.91fb14bb.css",
     "static/js/main.cbe660ee.js"
->>>>>>> 6cfae5c522aefebc172fd836487227cd7d8ddcf3
   ]
 }
