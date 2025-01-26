@@ -277,7 +277,7 @@ export const Record = ({track, embla, activeRecord, mousePosition, setMousePosit
       <img ref={recordRef} src={getSrc()} alt={"record-" + track.color} className="spin record-image" />
       <img ref={recordCenterRef} src={recordCenter} alt={"record-center-" + track.color} className="spin record-center" />
       <img src={recordGlare} alt={"record-glare-" + track.color} className="record-glare" style={{ transform: `rotate(${glareRotation}deg)` }} />
-      <div className="record-controls gap-2">      
+      <div className="record-controls gap-2" style={{zIndex: 1000}}>      
         <IconPlayerTrackPrevFilled onClick={handleLast} className="record-control-button" />
         {!playing[track.number] && <IconPlayerPlayFilled onClick={handlePlay} className={"record-control-button" + (pulse ? " pulse" : "")} />}
         {playing[track.number] && <IconPlayerPauseFilled onClick={handlePause} className="record-control-button" />}
