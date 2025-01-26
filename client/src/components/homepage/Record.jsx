@@ -30,6 +30,7 @@ import MustangSally from "../../assets/audio/mustangSally.mp3"
 import AllRightNow from "../../assets/audio/allRightNow.mp3"
 import { Text } from "@mantine/core"
 import { WLTextV2 } from "../../libraries/Web-Legos/components/Text"
+import { useZoomDetector } from '../../hooks/useZoomDetector';
 
 export const RecordColor = {
   Gold: "gold",
@@ -121,6 +122,14 @@ export const RecordTray = ({userCanEditText}) => {
 
   const [clicked, setClicked] = useState(null);
 
+  const zoom = useZoomDetector();
+
+  const [zoomLevel, setZoomLevel] = useState(1);
+
+  useEffect(() => {
+    setZoomLevel(zoom);
+  }, [zoom]);
+
   useEffect(() => {
     if (!audios[activeRecord]) {
       const audio = new Audio(tracks[activeRecord].audioHref);
@@ -152,10 +161,20 @@ export const RecordTray = ({userCanEditText}) => {
 
   }, [playing, activeRecord, audios])
 
+  const adjustedSlideSize = `${20 / zoomLevel}%`;
+
   return (
     <div className="record-tray w-100" onMouseMove={handleMouseMove}>
       
-      <Carousel className="record-carousel w-100" getEmblaApi={setEmbla} ref={carouselRef} slideSize="20%" loop onSlideChange={num => setActiveRecord(num)} >
+      <Carousel
+        key={zoomLevel}
+        className="record-carousel w-100"
+        getEmblaApi={setEmbla}
+        ref={carouselRef}
+        slideSize={adjustedSlideSize}
+        loop
+        onSlideChange={num => setActiveRecord(num)}
+      >
         {tracks.map((track, index) => (
           <Carousel.Slide key={index} className="record-slide" onMouseMove={handleMouseMove}>
             <Record

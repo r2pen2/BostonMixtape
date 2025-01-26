@@ -42,7 +42,8 @@ body {
 }
 
 .record {
-  --record-size: 500px;
+  --record-size: 25vw;
+  
   --record-opacity: 0.8;
   --controls-opacity: 0;
   

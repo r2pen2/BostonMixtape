@@ -1,10 +1,10 @@
 import MarkEmailReadOutlinedIcon from '@mui/icons-material/MarkEmailReadOutlined';
-import {WLText, WLTextV2} from "../../libraries/Web-Legos/components/Text";
+import {WLTextV2} from "../../libraries/Web-Legos/components/Text";
 import { AuthenticationManager } from '../../libraries/Web-Legos/api/auth.ts';
 import { useContext, useEffect, useState } from 'react';
 import { BBOMailManager, CurrentSignInContext } from '../../App';
 import { Modal, Spacer, Text } from '@nextui-org/react';
-import {Accordion, Button, Input, Paper, Textarea} from "@mantine/core"
+import {Button, Input, Textarea} from "@mantine/core"
 import { FormResponse } from '../../libraries/Web-Legos/api/admin.ts';
 
 import ReCAPTCHA from "react-google-recaptcha";
@@ -63,8 +63,6 @@ export const Contact = () => {
           `Message: ${message}`;
         return body;
       }
-  
-      console.log(getEmailBody());
   
       BBOMailManager.sendMail(
         `New BostonMixtape Contact Form Submission from ${name}`,
