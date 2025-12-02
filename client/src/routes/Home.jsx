@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 
 import "../assets/style/home.css"
 import { RecordTray } from '../components/homepage/Record'
@@ -44,9 +44,30 @@ export default function Home() {
     FeaturedVideo.getAndSet(setFeaturedVideo);
   }, [currentSignIn, authenticationManager]);
 
-  const [performers, setPerformers] = useState([])
+  const [performers, setPerformers] = useState([Performer.examples.default, Performer.examples.alternate, Performer.examples.default, Performer.examples.alternate, Performer.examples.default, Performer.examples.alternate])
 
   const Ensemble = () => {
+
+    const [showPerformerHint, setShowPerformerHint] = useState(false);
+    const ensembleRef = useRef(null);
+
+    useEffect(() => {
+      const section = ensembleRef.current;
+      if (!section) { return; }
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setShowPerformerHint(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.3 }
+      );
+
+      observer.observe(section);
+      return () => observer.disconnect();
+    }, []);
 
     const PerformerSlide = ({performer}) => {
       return (
@@ -79,17 +100,30 @@ export default function Home() {
     }
 
     return (
-      <section id="ensemble" className="purple-content px-2 px-sm-3 py-5 d-flex flex-column align-items-center justify-content-center">
+      <section ref={ensembleRef} id="ensemble" className="purple-content px-2 px-sm-3 py-5 d-flex flex-column align-items-center justify-content-center">
         <WLHeaderV2 firestoreId="ensemble-header" editable={userCanEditText} h2 className="gibbons-regular" />
         <WLTextV2 className="wider lighter mb-2" firestoreId="ensemble-body-1" editable={userCanEditText} />
-        <Carousel 
-          className="performer-container px-md-5 px-1"
-          slideSize={{ base: '90%', md: '50%' }}
-          // align="start"
-          loop
-        >
-          {performers.map((performer, index) => <PerformerSlide key={index} performer={performer} />)}
-        </Carousel>
+        <div className="performer-carousel-wrapper">
+          {showPerformerHint && (
+            <div className="performer-carousel-hint">
+              <div className="performer-carousel-hint-hand">👆</div>
+              <p className="performer-carousel-hint-text richard-regular">
+                Drag or use the arrows to meet more of our top talent
+              </p>
+            </div>
+          )}
+          <Carousel 
+            className="performer-container px-md-5 px-1"
+            slideSize={{ base: '90%', md: '50%' }}
+            withIndicators
+            withControls
+            controlSize={56}
+            onSlideChange={() => setShowPerformerHint(false)}
+            loop
+          >
+            {performers.map((performer, index) => <PerformerSlide key={index} performer={performer} />)}
+          </Carousel>
+        </div>
         <AddModelButton
           userCanEdit={userCanEditText} 
           model={Performer} 

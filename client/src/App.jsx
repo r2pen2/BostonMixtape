@@ -4,7 +4,7 @@ import "./libraries/Web-Legos/Layouts/wl.css";
 
 // Component Imports
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Link, Spacer, Text } from '@nextui-org/react';
+import { Link, Text } from '@nextui-org/react';
 import { createContext, useState } from 'react';
 
 import logo from "./assets/images/homepage/casette.png"

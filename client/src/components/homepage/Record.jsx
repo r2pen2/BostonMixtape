@@ -16,7 +16,7 @@ import { useEffect, useRef, useState } from "react"
 import '@mantine/carousel/styles.css';
 import { Carousel } from '@mantine/carousel';
 
-import { IconPlayerPause, IconPlayerPauseFilled, IconPlayerPlay, IconPlayerPlayFilled, IconPlayerTrackNext, IconPlayerTrackNextFilled, IconPlayerTrackPrevFilled } from "@tabler/icons-react"
+import { IconPlayerPauseFilled, IconPlayerPlayFilled, IconPlayerTrackNextFilled, IconPlayerTrackPrevFilled } from "@tabler/icons-react"
 
 import brownEyedGirl from "../../assets/audio/brownEyedGirl.mp3"
 import driftAway from "../../assets/audio/driftAway.mp3"
@@ -29,7 +29,6 @@ import haveIToldYouLately from "../../assets/audio/haveIToldYouLately.mp3"
 import MustangSally from "../../assets/audio/mustangSally.mp3"
 import AllRightNow from "../../assets/audio/allRightNow.mp3"
 import { Text } from "@mantine/core"
-import { WLTextV2 } from "../../libraries/Web-Legos/components/Text"
 import { useZoomDetector } from '../../hooks/useZoomDetector';
 
 export const RecordColor = {

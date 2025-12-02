@@ -227,6 +227,11 @@ img.record-glare {
   flex-direction: column;
 }
 
+.hero-container {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
 .h2-container {
   align-self: center;
   font-size: 2rem;
@@ -269,6 +274,11 @@ h2.hero {
 
   .record-controls {
     bottom: 20%;
+  }
+
+  .hero-container {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
   }
 
   .hero {
@@ -421,6 +431,99 @@ section.light-purple-content * p:not(.performer-text).lighter  {
   margin-bottom: 0.25rem;
   border-radius: 0.25rem;
   background-color: #3D1520;
+}
+
+/* Make performer carousel arrows clearly visible */
+.performer-container .mantine-Carousel-control {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  border: 2px solid #FCB393;
+  color: #FCB393;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.performer-container .mantine-Carousel-control:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+}
+
+/* ---- Performer carousel controls (arrows) ---- */
+.mantine-Carousel-control {
+  border-radius: 999px;
+  border: 2px solid #FCB393;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  color: #FCB393;
+}
+
+.mantine-Carousel-control:hover {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.mantine-Carousel-control svg {
+  stroke-width: 2.5;
+}
+
+.performer-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.performer-carousel-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 5;
+  animation: fadeHintCycle 10s ease-in-out infinite;
+}
+
+.performer-carousel-hint-hand {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  animation: handNudge 1.2s ease-in-out infinite;
+}
+
+.performer-carousel-hint-text {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 1rem !important;
+}
+
+@keyframes handNudge {
+  0% { transform: translateX(0); }
+  40% { transform: translateX(10px); }
+  80% { transform: translateX(0); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fadeHintCycle {
+  0% {
+    opacity: 0;
+  }
+  /* stay fully off for first ~2.5s */
+  25% {
+    opacity: 0;
+  }
+  /* fade in over next ~2.5s */
+  50% {
+    opacity: 1;
+  }
+  /* stay fully visible for ~2.5s */
+  75% {
+    opacity: 1;
+  }
+  /* fade out over last ~2.5s */
+  100% {
+    opacity: 0;
+  }
 }
 
 .mantine-Accordion-chevron svg {
